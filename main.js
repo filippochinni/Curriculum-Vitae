@@ -8,8 +8,8 @@ const SECTION_ORDER = [
 	"Education",
 	"Work Experience",
 	"Portfolio",
-	"Hard Skills",
-	"Soft Skills",
+	"Skills",
+	"Full Hard Skills List",
 	"Awards",
 	"Projects and Competitions",
 	"Languages",
@@ -158,6 +158,9 @@ function buildSection(sectionDiv, sectionData) {
 		case "generic-table":
 			buildSectionTable(sectionContentDiv, sectionData.content);
 			break;
+		case "bullet-lists":
+			buildSectionBullet(sectionContentDiv, sectionData.content);
+			break;
 		case "nested-lists":
 			buildSectionNested(sectionContentDiv, sectionData.content);
 			break;
@@ -235,6 +238,44 @@ function buildSectionEntries(sectionContentDiv, sectionContent) {
 		});
 	}
 	return sectionContentDiv;
+}
+
+function buildSectionBullet(sectionContentDiv, sectionContent) {
+	for (const entry of sectionContent) {
+		const entryDiv = createElement('div', 'entryDiv');
+		const entryTitleDiv = createElement('div', 'entryTitleDiv');
+		const h1ListDiv = createElement('div', 'innerListDivH1');
+		const innerEntryBulletList = createElement('ul', 'innerEntryBulletList');
+
+		sectionContentDiv.appendChild(entryDiv);
+
+		entryTitleDiv.innerHTML = parseText(entry.h1);
+		entryDiv.appendChild(entryTitleDiv);
+		entryDiv.appendChild(h1ListDiv);
+
+		entryDiv.firstChild.addEventListener('click', () => {
+			if (entryDiv.classList.contains('collapsed')) {
+				entryDiv.classList.remove('collapsed');
+				for (const child of entryDiv.children) {
+					child.style.display = 'flex';
+				}
+			} else {
+				entryDiv.classList.add('collapsed');
+				for (const child of entryDiv.children) {
+					child.style.display = 'none';
+				}
+				entryDiv.firstChild.style.display = 'block';
+			}
+		});
+
+		h1ListDiv.appendChild(innerEntryBulletList);
+		for (const innerEntry of entry.list) {
+			const innerEntryDiv = createElement('li', 'innerEntryDiv');
+			innerEntryDiv.innerHTML = parseText(innerEntry);
+			innerEntryDiv.addEventListener('dblclick', () => { if (isDBClickEnabled) innerEntryDiv.style.display = 'none'; });
+			innerEntryBulletList.appendChild(innerEntryDiv);
+		}
+	}
 }
 
 function buildSectionNested(sectionContentDiv, sectionContent) {

@@ -7,9 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.0] - 2026-07-30
+
 ### Added
 
 - Fixed: items lists was displaying incorrectly after toggling accordion.
+- Added a new section type called `bullet-lists`
+- Added new section "Skills"
 
 ## [1.2.0] - 2026-07-29
 
@@ -37,7 +41,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [START of the PROJECT]
 - Initial project setup and configuration.
 
-[unreleased]: https://github.com/filippochinni/Curriculum-Vitae/compare/v1.2.0...HEAD
+[unreleased]: https://github.com/filippochinni/Curriculum-Vitae/compare/v1.3.0...HEAD
+[1.3.0]: https://github.com/filippochinni/Curriculum-Vitae/compare/v1.2.0...v1.3.0
 [1.2.0]: https://github.com/filippochinni/Curriculum-Vitae/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/filippochinni/Curriculum-Vitae/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/filippochinni/Curriculum-Vitae/compare/v0.1.0...v1.0.0

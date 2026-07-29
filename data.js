@@ -1,11 +1,11 @@
 export const DATA = {
-	version: "v1.0.0",
+	version: "v1.3.0",
 	header: {
 		picture: "./images/picture.png",
 		fullName: "Filippo Chinni Carella",
 		nationality: "Italian",
 		birthDate: "27/06/2002",
-		location: "Turin (TO), Italy",
+		location: "Turin, Piedmont, Italy",
 		email: "!!<filippochinni02@gmail.com><filippochinni02@gmail.com>",
 		other: "!!<LinkedIn><https://www.linkedin.com/in/filippo-chinni-carella> | !!<GitHub><https://github.com/filippochinni>"
 	},
@@ -13,7 +13,8 @@ export const DATA = {
 		{
 			sectionTitle: "Presentation",
 			type: "text-only",
-			content: "Graduate Student in Computer Science. Software Engineer and Developer."
+			content: "Graduate Student in Computer Science. Software Engineer and Developer.\n\
+			Specialized in Software Design and Documentation. Educated and experienced in AI applications and Data Engineering."
 		},
 		{
 			sectionTitle: "Education",
@@ -59,7 +60,7 @@ export const DATA = {
 					entryKey: "Mar 2025 - Sep 2025",
 					title: "DeepTree | ::Student Consultant::",
 					subtitle: "Milan, Italy (Hybrid)",
-					description: "",
+					description: "I worked as a Student Consultant for DeepTree at the REDI project with the goal of turning DeepTree (the startup's main product) from an intelligent platform used by analysts towards an intelligent AI analyst.",
 					grade: "",
 					extra: "",
 					media: [],
@@ -93,7 +94,52 @@ export const DATA = {
 			]
 		},
 		{
-			sectionTitle: "Hard Skills",
+			sectionTitle: "Skills",
+			type: "bullet-lists",
+			content: [
+				{
+					h1: "Software Developing",
+					list: [
+						"**Software Engineering:** developed multiple full-cycle software projects of all kinds using best practices for design, implementation, and processes",
+						"**Software Design:** designed diagrams and schemas on all levels of abstraction",
+						"**Software Documentation:** written countless documentation documents for many projects, including Requirements Engineering, Software Design, UI/UX Design, Software Testing, ...",
+						"**Software Testing & Debugging:** have experience and natural talent in finding bugs",
+						"**Project Management:** can make estimations and plans; experienced with Agile methodologies (SCRUM) and ALM tools"
+					]
+				},
+				{
+					h1: "Artificial Intelligence and Data Science",
+					list: [
+						"**Machine Learning:** attended multiple courses on the topic, and based my Bachelor's Thesis on a Machine/Deep Learning theme, Hyperparameter Optimization",
+						"**Data Analysis:** attended a specilized extra course on Intelligent Data Analysis",
+						"**Big Data Processing:** experience with tools such as Hadoop, Spark, and MapReduce"
+					]
+				},
+				{
+					h1: "Programming Languages (Best)",
+					list: [
+						"**Java:** built several projects including 2 Android Apps",
+						"**Python:** developed numerous personal utility projects, and a Machine Learning project for the experiments of my Bachelor's Thesis",
+						"**JavaScript:** deployed various web projects, including fan websites and the builder of this CV",
+						"**C:** had extensive practice during educational courses; have experience in embedded programming and have built a Pacman game on a SoC",
+					]
+				},
+				{
+					h1: "Soft Skills",
+					list: [
+						"**Proactive Learning:** very good at self-learning and excited to try new skills and processes",
+						"**Leadership:** led every group project in university as Team Leader, always achieving the best grade, and also winning an award for one of our projects",
+						"**Teamwork:** educational experience was filled with group projects, where I learned the most about teamwork being the Team Leader",
+						"**Precision:** have particular care for quality, tidiness, and completeness in my work",
+						"**Critical Thinking:** analyze problems and ask whys behind decisions to draw thoughtful conclusions",
+						"**Coaching:** able to lead colleagues and teammates to a standardized workflow",
+						"**Problem Solving:** work smart to efficiently analyze problems and find solutions",
+					]
+				},
+			]
+		},
+		{
+			sectionTitle: "Full Hard Skills List",
 			type: "nested-lists",
 			content: [
 				{
@@ -141,11 +187,11 @@ export const DATA = {
 						{
 							h2: "Programming Languages",
 							list: [
+								"Java",
+								"Python",
+								"JavaScript",
 								"C",
 								"C++",
-								"Java",
-								"JavaScript",
-								"Python",
 								"SQL",
 								"Assembly (ARM)",
 								"Rust",
@@ -256,6 +302,7 @@ export const DATA = {
 						"Software Testing Principles and Technologies",
 						"Mobile Software Developing",
 						"Computational Intelligence",
+						"Data Analysis",
 						"Embedded Computer Architectures",
 						"Big Data Processing and Analytics",
 						"Data Science and Database Technologies",
@@ -283,33 +330,6 @@ export const DATA = {
 						"Economics and Corporate Business",
 					],
 				},
-			]
-		},
-		{
-			sectionTitle: "Soft Skills",
-			type: "entries-list",
-			content: [
-				{
-					title: "Proactive Learning",
-					subtitle: "",
-					description: "Very good at self-learning and master new skills and processes.",
-					extra: "",
-					media: []
-				},
-				{
-					title: "Problem Solving",
-					subtitle: "",
-					description: "Working smart to efficiently solve problems and find solutions.",
-					extra: "",
-					media: []
-				},
-				{
-					title: "Leadership and Team Management",
-					subtitle: "",
-					description: "Was the Team Leader of every group project in university.",
-					extra: "",
-					media: []
-				}
 			]
 		},
 		{
