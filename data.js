@@ -36,7 +36,7 @@ export const DATA = {
 					description: "",
 					grade: "Grade 110/110 Cum Laude and Special Mention",
 					extra: "::Bachelor's Thesis::: \"__Hyperparameter Optimization: Techniques, Particle Swarm Optimization, with Application in Drone Vision__\"",
-					media: [],
+					media: ["./images/media/bachelor_degree_certificate.jpeg"],
 					icon: "./images/icons/uniba.png"
 				},
 				{
@@ -57,7 +57,7 @@ export const DATA = {
 			content: [
 				{
 					entryKey: "Mar 2025 - Sep 2025",
-					title: "DeepTree -- Student Consultant",
+					title: "DeepTree | ::Student Consultant::",
 					subtitle: "Milan, Italy (Hybrid)",
 					description: "",
 					grade: "",
@@ -85,7 +85,7 @@ export const DATA = {
 					subtitle: "Prominent projects I developed:",
 					description: "!!<PronuntiApp><https://github.com/FilippoChinniUNIVERSITY/PronuntiApp>: Android App for Speech Therapy - Mobile Software Development Project\n\
 					!!<Pacman (on LandTiger SoC)><https://github.com/FilippoChinniUNIVERSITY/PacMan-LandTiger>: Pacman developed on System on Chip (SoC) - LandTiger LPC1768\n\
-					Bachelor's Thesis: !!<Paper><https://drive.google.com/file/d/1Ew50b8u7d7MQaOyo6f-5lWjxfeeLSAeu/view?usp=sharing> | !!<LateX Repo><https://github.com/FilippoChinniUNIVERSITY/Bachelor-Thesis-Paper> | !!<Code Repo><https://github.com/FilippoChinniUNIVERSITY/Bachelor-Thesis>",
+					::Bachelor's Thesis::: !!<Paper><https://drive.google.com/file/d/1Ew50b8u7d7MQaOyo6f-5lWjxfeeLSAeu/view?usp=sharing> | !!<LateX Repo><https://github.com/FilippoChinniUNIVERSITY/Bachelor-Thesis-Paper> | !!<Code Repo><https://github.com/FilippoChinniUNIVERSITY/Bachelor-Thesis>",
 					extra: "",
 					media: [],
 					icon: "./images/icons/github.png"
@@ -111,7 +111,6 @@ export const DATA = {
 								"Software Testing & Debugging",
 								"Software Documentation",
 								"Software UML Design",
-								"Software Documentation"
 							],
 						},
 						{
@@ -334,7 +333,7 @@ export const DATA = {
 					description: "",
 					grade: "Score 213 (Grade B) (Equivalent to **IELTS 9**)",
 					extra: "",
-					media: [],
+					media: ["./images/media/c2_certificate.png", "./images/media/c2_statement_result.png"],
 					icon: "./images/icons/english.png"
 				}
 			]
@@ -349,7 +348,7 @@ export const DATA = {
 					subtitle: "Politecnico di Milano & Politecnico di Torino",
 					description: "Alta Scuola Politecnica (lit. Higher Polytechnic School) is a Multidisciplinary and unique international honour program created by Politecnico di Milano and Politecnico di Torino.\nOnly the best 150 students from all master\'s courses of the two universities are selected each academic year.\nASP students are initiated into a path of advanced interdisciplinary training to understand the complex relationships between science, innovation, technology and socio-economic systems.",
 					grade: "",
-					extra: "",
+					extra: "!!<Official Admitted Candidates List><https://www.polito.it/sites/default/files/2024-11/DD%202280%20del%2018%20novembre%202024_ASP_Graduatoria%20finale%202024_25_F.pdf> | [!!<Alt Link><https://web.archive.org/web/20250613133423/https:/www.polito.it/sites/default/files/2024-11/DD%202280%20del%2018%20novembre%202024_ASP_Graduatoria%20finale%202024_25_F.pdf>]",
 					media: [],
 					icon: "./images/icons/alta_scuola_politecnica.jpg"
 				},
@@ -360,7 +359,7 @@ export const DATA = {
 					description: "CWMUN is one of the most important multidisciplinary United Nations forums.\nIt takes place at the UN Headquarters in New York and is attended by over 3000 people, including high school and university students, ambassadors, former ministers and prime ministers, sport champions and UN Officials.\nAfter over 60 hours of seminars and individual study in preparation for the event, I had the opportunity to actively discuss the most important global geopolitical topics with the other participants from all over the world.",
 					grade: "",
 					extra: "",
-					media: [],
+					media: ["./images/media/cwmun_guinea.jpg", "./images/media/cwmun_general_assembly.jpg"],
 					icon: "./images/icons/cwmun.jpg"
 				},
 				{
@@ -370,7 +369,7 @@ export const DATA = {
 					description: "The \"Championnat International des Jeux Mathématiques et Logiques\" is an international mathematics competition.\nAfter achieving 2nd place in the regional competition, I participated in the national final held at \"Centro PRISTEM\" in Bocconi University.",
 					grade: "",
 					extra: "",
-					media: [],
+					media: ["./images/media/mathematical_games_certificate.jpg"],
 					icon: "./images/icons/giochi_matematici.jpg"
 
 				}

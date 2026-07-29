@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Sections order can be defined in the `main.js` file using the `SECTION_ORDER` array.
+- Added a few Media.
+- Added accordion buttons for collapsible sections.
+
 ## [1.0.0] - 2026-07-29
 
 ### Added

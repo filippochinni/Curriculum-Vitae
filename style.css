@@ -180,6 +180,7 @@ header {
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;
+	position: relative;
 
 	width: 100%;
 
@@ -187,6 +188,65 @@ header {
 
 	cursor: pointer;
 	user-select: none;
+}
+
+.sectionTitleDiv::after {
+	content: "";
+	position: absolute;
+	top: 0.35rem;
+	right: 0.2rem;
+	width: 0.5rem;
+	height: 0.5rem;
+	border-right: 0.12rem solid dodgerblue;
+	border-bottom: 0.12rem solid dodgerblue;
+	transform: rotate(45deg);
+	transform-origin: center;
+	transition: transform 0.2s ease;
+	pointer-events: none;
+}
+
+span .sectionToggleIcon {
+	display: none;
+}
+
+.sectionTitleDiv:has(+ .sectionContentDiv[style*="display: none"])::after {
+	transform: rotate(-45deg);
+}
+
+.entryDiv > .entryTitleDiv,
+.innerListDivH2 > .entrySubtitleDiv {
+	position: relative;
+	width: 100%;
+	padding-right: 1rem;
+	box-sizing: border-box;
+}
+
+.tableEntryDiv > .entryDiv > .entryTitleDiv::after {
+    display: none;
+}
+
+.tableEntryDiv > .entryDiv > .entryTitleDiv {
+    padding-right: 0;
+}
+
+.entryDiv > .entryTitleDiv::after,
+.innerListDivH2 > .entrySubtitleDiv::after {
+	content: "";
+	position: absolute;
+	top: 0.35rem;
+	right: 0.1rem;
+	width: 0.45rem;
+	height: 0.45rem;
+	border-right: 0.12rem solid dodgerblue;
+	border-bottom: 0.12rem solid dodgerblue;
+	transform: rotate(45deg);
+	transform-origin: center;
+	cursor: pointer;
+}
+
+.entryDiv.collapsed > .entryTitleDiv::after,
+.innerListDivH2.collapsed > .entrySubtitleDiv::after {
+	transform: rotate(-45deg);
 }
 
 .sectionTitle {
@@ -311,12 +371,16 @@ header {
 
 	margin-top: 2%;
 
-	gap: 10%;
+	gap: 5%;
 }
 
 .mediaContainerDiv {
-	width: 200px;
-	height: 150px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 185px;
+	height: 130px;
 
 	border: 0.1rem solid dodgerblue;
 }
@@ -511,6 +575,15 @@ footer > .sectionTitleDeco {
 	}
 
 	#secretButton {
+		display: none;
+	}
+
+	.sectionTitleDiv::after {
+		display: none;
+	}
+
+	.entryDiv > .entryTitleDiv::after,
+	.innerListDivH2 > .entrySubtitleDiv::after {
 		display: none;
 	}
 }

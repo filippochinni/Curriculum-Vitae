@@ -147,11 +147,8 @@ function buildSection(sectionDiv, sectionData) {
 	sectionDiv.appendChild(sectionContentDiv);
 
 	sectionTitleDiv.addEventListener('click', () => {
-		if (sectionTitleDiv.nextSibling.style.display === "flex") {
-			sectionTitleDiv.nextSibling.style.display = "none";
-		} else {
-			sectionTitleDiv.nextSibling.style.display = "flex";
-		}
+		const isExpanded = getComputedStyle(sectionContentDiv).display !== 'none';
+		sectionContentDiv.style.display = isExpanded ? 'none' : 'flex';
 	});
 
 	switch (sectionData.type) {
