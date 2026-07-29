@@ -1,0 +1,512 @@
+body {
+	font-family: 'Calibri', 'Arial';
+	font-size: 1rem;
+
+	color: #111;
+}
+
+#pageListDiv {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.pageDiv {
+	width: 210mm;
+	/* height: 297mm; */
+	height: fit-content;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	background-color: #fdfdfd;
+	border: 1px solid #ddd;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+
+	margin: 1vw;
+	padding: 20mm;
+	box-sizing: border-box;
+}
+
+.pageDiv:first-child {
+	padding-top: 10mm;
+}
+
+header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	width: 100%;
+	height: fit-content;
+}
+
+#mainHeaderDiv {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: flex-start;
+
+	width: 100%;
+	height: fit-content;
+
+	gap: 6%;
+
+	margin-bottom: 2%;
+}
+
+#profilePicDiv {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	height: 100%;
+	width: 40%;
+
+	align-self: center;
+	justify-self: center;
+}
+
+#profilePicContainerDiv {
+	width: fit-content;
+	height: 150px;
+	border-radius: 50%;
+	border: 0.15rem solid dodgerblue;
+}
+
+#profilePicContainerDiv img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+#headerInfoDiv {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+
+	width: 100%;
+	height: fit-content;
+}
+
+#headerNameDiv {
+	font-size: 2rem;
+	font-weight: bold;
+
+	width: 100%;
+
+	margin-bottom: 3%;
+}
+
+.tableLayout {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+
+	width: 100%;
+	height: fit-content;
+}
+
+.tableLayoutList {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+
+	width: 100%;
+	height: fit-content;
+}
+
+.tableLayoutRow {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: flex-start;
+
+	width: 100%;
+	height: fit-content;
+}
+
+.tableLayoutRow > :nth-child(1) {
+	width: 7%;
+	align-self: flex-start;
+}
+
+.tableLayoutRow > :nth-child(2) {
+	width: 25%;
+	align-self: flex-start;
+
+	font-weight: bold;
+}
+
+.tableLayoutRow > :nth-child(2) img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.contentDiv {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+
+	width: 100%;
+	height: fit-content;
+	gap: 3%;
+}
+
+.sectionDiv {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+
+	width: 100%;
+	height: fit-content;
+
+	margin-bottom: 3%;
+}
+
+.sectionTitleDiv {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+
+	width: 100%;
+
+	margin-bottom: 1.8%;
+
+	cursor: pointer;
+	user-select: none;
+}
+
+.sectionTitle {
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: dodgerblue;
+}
+
+.sectionTitleDeco {
+	width: 100%;
+	height: 0.15rem;
+	background-color: dodgerblue;
+}
+
+.sectionContentDiv {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+
+	width: 100%;
+	height: fit-content;
+}
+
+.innerListDivH1 {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+
+	width: 100%;
+	height: fit-content;
+	gap: 0.5%;
+
+	margin-bottom: 1%;
+}
+
+.innerListDivH2 {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+
+	width: 100%;
+	height: fit-content;
+	gap: 0.5%;
+
+	margin-bottom: 0.5%;
+}
+
+.innerEntryDiv {
+	font-size: 1rem;
+}
+
+.tableEntryDiv {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-start;
+
+	width: 100%;
+	height: fit-content;
+	gap: 5%;
+}
+
+.tableKeyDiv {
+	white-space: nowrap;
+	width: 35%;
+}
+
+.entryDiv {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+
+	width: 100%;
+	height: fit-content;
+}
+
+.entryTitleDiv {
+	font-size: 1.0rem;
+	font-weight: bold;
+}
+
+.entrySubtitleDiv {
+	font-size: 1.0rem;
+	font-weight: bold;
+	color: darkgray;
+
+	margin-top: 1%;
+}
+
+.entryDescriptionDiv {
+	font-size: 1rem;
+}
+
+.entryGradeDiv {
+	font-size: 1rem;
+	margin-top: 1.5%;
+}
+
+.entryExtraDiv {
+	font-size: 1rem;
+	margin-top: 1.5%;
+}
+
+.entryMediaDiv {
+	display: flex;
+
+	margin-bottom: 4%;
+}
+
+.mediaGalleryDiv {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+
+	width: 100%;
+	height: fit-content;
+
+	margin-top: 2%;
+
+	gap: 10%;
+}
+
+.mediaContainerDiv {
+	width: 200px;
+	height: 150px;
+
+	border: 0.1rem solid dodgerblue;
+}
+
+.mediaContainerDiv img {
+	display: block;
+	max-width: 100%;
+	max-height: 100%;
+	width: auto;
+	height: auto;
+	object-fit: contain;
+}
+
+.entryIconDiv {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	height: 100%;
+	width: 15%;
+
+	align-self: center;
+	justify-self: center;
+
+	cursor: pointer;
+}
+
+.entryIconContainerDiv {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	border: 0.1rem solid dodgerblue;
+}
+
+.entryIconContainerDiv img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+span.underline {
+	text-decoration: underline;
+	text-decoration-thickness: 1.5px;
+	text-decoration-color: dodgerblue;
+}
+
+.entryExtraDiv {
+	span.underline {
+		text-decoration: underline;
+		text-decoration-thickness: 2px;
+		text-decoration-color: cyan;
+
+	}
+}
+
+#signatureDiv {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+
+	height: 100%;
+	width: fit-content;
+
+	align-self: center;
+	justify-self: center;
+}
+
+#signatureContainerDiv {
+	width: 200px;
+	height: 150px;
+}
+
+#signatureContainerDiv img {
+	display: block;
+	max-width: 100%;
+	max-height: 100%;
+	width: auto;
+	height: auto;
+	object-fit: contain;
+}
+
+#dateDiv {
+	width: 200px;
+	height: 150px;
+
+	font-size: 1.3rem;
+	font-weight: bold;
+}
+
+#bottomFooterDiv {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+
+	width: 100%;
+	height: fit-content;
+
+	margin-top: 1%;
+}
+
+#lawDiv {
+	font-size: 0.8rem;
+	font-style: italic;
+
+	margin-top: 1%;
+}
+
+footer > .sectionTitleDeco {
+	margin-top: 1%;
+}
+
+
+#downloadButton {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	position: absolute;
+	top: 20px;
+	right: 20px;
+
+	width: 100px;
+	height: 100px;
+
+	background-color: dodgerblue;
+	color: white;
+	border-radius: 20%;
+
+	cursor: pointer;
+}
+
+#downloadButton:hover {
+	background-color: deepskyblue;
+}
+
+#downloadButton img {
+	width: 90%;
+	height: 90%;
+
+	border-radius: 20%;
+}
+
+#secretButton {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+
+	width: 20px;
+	height: 20px;
+
+	cursor: pointer;
+
+	border: none;
+	background-color: transparent;
+}
+
+
+@media print {
+	@page {
+	  size: A4;
+	  margin-top: 20mm;
+	  margin-bottom: 20mm;
+	  margin-left: 20mm;
+	  margin-right: 20mm;
+	}
+	@page :first {
+	  margin-top: 0mm;
+	}
+	.pageDiv {
+	  box-shadow: none;
+	  border: none;
+	  background-color: white;
+	}
+	.sectionTitleDiv:has(+ .sectionContentDiv[style*="display: none"]) {
+		display: none;
+	}
+
+	.collapsed > .entryTitleDiv {
+		display: none !important;
+	}
+
+	.collapsed > .entrySubtitleDiv {
+		display: none !important;
+	}
+
+	#downloadButton {
+		display: none;
+	}
+}
