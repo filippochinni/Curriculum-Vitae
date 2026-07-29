@@ -21,7 +21,7 @@ export const DATA = {
 			content: [
 				{
 					entryKey: "Sep 2024 - Present",
-					title: "M.sc Degree:: Computer Engineering (Curriculum:\nArtificial Intelligence and Data Analytics)",
+					title: "::M.sc Degree::: Computer Engineering (Curriculum:\nArtificial Intelligence and Data Analytics)",
 					subtitle: "Politecnico di Torino, Turin",
 					description: "",
 					grade: "",
@@ -31,17 +31,17 @@ export const DATA = {
 				},
 				{
 					entryKey: "Oct 2021 - Jul 2024",
-					title: "B.sc Degree:: Computer Science and Technologies\nfor Software Production",
+					title: "::B.sc Degree::: Computer Science and Technologies\nfor Software Production",
 					subtitle: "University of Bari \"Aldo Moro\", Bari",
 					description: "",
 					grade: "Grade 110/110 Cum Laude and Special Mention",
-					extra: "Bachelor's Thesis:: \"__Hyperparameter Optimization: Techniques, Particle Swarm Optimization, with Application in Drone Vision__\"",
+					extra: "::Bachelor's Thesis::: \"__Hyperparameter Optimization: Techniques, Particle Swarm Optimization, with Application in Drone Vision__\"",
 					media: [],
 					icon: "./images/icons/uniba.png"
 				},
 				{
 					entryKey: "2016 - 2021",
-					title: "High School Diploma: High School Diploma in Scientific Studies",
+					title: "High School Diploma: Diploma in Scientific Studies",
 					subtitle: "Liceo Scientifico A. Scacchi, Bari",
 					description: "",
 					grade: "",
@@ -108,8 +108,7 @@ export const DATA = {
 								"Embedded Development",
 								"Agile Methodologies (SCRUM)",
 								"Database Design",
-								"Software Testing",
-								"Software Debugging",
+								"Software Testing & Debugging",
 								"Software Documentation",
 								"Software UML Design",
 								"Software Documentation"
@@ -238,7 +237,7 @@ export const DATA = {
 			]
 		},
 		{
-			sectionTitle: "Studies",
+			sectionTitle: "Full Studies and Courses",
 			type: "nested-lists",
 			content: [
 				{
@@ -319,7 +318,7 @@ export const DATA = {
 			type: "generic-table",
 			content: [
 				{
-					entryKey: "Italian",
+					entryKey: "::Italian::",
 					title: "Native",
 					subtitle: "",
 					description: "",
@@ -329,7 +328,7 @@ export const DATA = {
 					icon: "./images/icons/italian.png"
 				},
 				{
-					entryKey: "English",
+					entryKey: "::English::",
 					title: "Fluent (C2)",
 					subtitle: "Cambridge Certificate of Proficiency in English (CPE) (C2)",
 					description: "",
@@ -378,7 +377,7 @@ export const DATA = {
 			]
 		},
 		{
-			sectionTitle: "Competitive Sport",
+			sectionTitle: "Competitive Sports",
 			type: "generic-table",
 			content: [
 				{

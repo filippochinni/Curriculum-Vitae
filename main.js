@@ -3,33 +3,64 @@ import { DATA } from "./data.js";
 
 let isDBClickEnabled = false;
 
-const globalPageListDiv = document.getElementById('pageListDiv');
-let globalCurrPageDiv = document.getElementById('page1');
-let globalCurrContentDiv = document.getElementById('contentDiv1');
+const SECTION_ORDER = [
+	"Presentation",
+	"Education",
+	"Work Experience",
+	"Portfolio",
+	"Hard Skills",
+	"Soft Skills",
+	"Awards",
+	"Projects and Competitions",
+	"Languages",
+	"Full Studies and Courses",
+	"Competitive Sports",
+]
 
 main();
 
 function main() {
+	const mPageListDiv = document.getElementById('pageListDiv');
+
+	const mPageDiv = document.getElementById('page');
+	const mContentDiv = document.getElementById('pageContent');
 	const mHeader = buildHeader(DATA.header);
 	const mFooter = buildFooter(DATA.footer);
-	globalCurrPageDiv.appendChild(mHeader);
-	globalCurrPageDiv.appendChild(globalCurrContentDiv);
+
+	mPageDiv.appendChild(mHeader);
+	mPageDiv.appendChild(mContentDiv);
 
 	const secretButton = createElement('button', '', 'secretButton');
 	secretButton.addEventListener('dblclick', () => {
 		alert(`Secret Button!\n` + `Editing is now ${isDBClickEnabled ? "Disabled" : "Enabled"}!`);
 		isDBClickEnabled = !isDBClickEnabled;
 	});
-	globalCurrPageDiv.appendChild(secretButton);
+	mPageDiv.appendChild(secretButton);
 
 	for (let i = 0; i < DATA.sections.length; i++) {
 		const sectionData = DATA.sections[i];
 		const mSectionDiv = createElement('div', 'sectionDiv', `section${i + 1}`);
 
-		globalCurrContentDiv.appendChild(mSectionDiv);
+		mContentDiv.appendChild(mSectionDiv);
 		buildSection(mSectionDiv, sectionData);
+		sortSections(mContentDiv);
 	}
-	globalCurrContentDiv.appendChild(mFooter);
+	mContentDiv.appendChild(mFooter);
+}
+
+function sortSections(contentDiv) {
+	const sections = Array.from(contentDiv.getElementsByClassName('sectionDiv'));
+	sections.sort((a, b) => {
+		const aTitle = a.querySelector('.sectionTitle').textContent;
+		const bTitle = b.querySelector('.sectionTitle').textContent;
+
+		const aIndex = SECTION_ORDER.indexOf(aTitle);
+		const bIndex = SECTION_ORDER.indexOf(bTitle);
+
+		return aIndex - bIndex;
+	});
+	sections.forEach(section => contentDiv.appendChild(section));
+	return contentDiv;
 }
 
 function buildHeader(headerData) {
@@ -52,7 +83,7 @@ function buildHeader(headerData) {
 	profilePicDiv.children[0].innerHTML = `<img src="${headerData.picture}" alt="Profile Picture">`;
 	headerNameDiv.innerHTML = `${parseText(headerData.fullName)}`;
 
-	headerInfoDiv.appendChild(buildTableLayout([
+	headerInfoDiv.appendChild(buildHeaderTableLayout([
 		{ icon: "&#x1F4C5", info: "Birth Date:", content: headerData.birthDate },
 		{ icon: "&#x1F310", info: "Nationality:",  content: headerData.nationality },
 		{ icon: "&#x1F30D", info: "Location:", content: headerData.location },
@@ -86,7 +117,7 @@ function buildFooter(footerData) {
 	return mFooter;
 }
 
-function buildTableLayout(rows) {
+function buildHeaderTableLayout(rows) {
 	const tableLayout = createElement('div', 'tableLayout');
 	const listLayout = createElement('div', 'tableLayoutList');
 
@@ -104,8 +135,6 @@ function buildTableLayout(rows) {
 }
 
 function buildSection(sectionDiv, sectionData) {
-	let localSectionDiv = sectionDiv;
-
 	const sectionTitleDiv = createElement('div', 'sectionTitleDiv');
 	const sectionTitle = createElement('div', 'sectionTitle');
 	const sectionTitleDeco = createElement('div', 'sectionTitleDeco');
@@ -114,8 +143,8 @@ function buildSection(sectionDiv, sectionData) {
 	sectionTitleDiv.appendChild(sectionTitle);
 	sectionTitleDiv.appendChild(sectionTitleDeco);
 
-	localSectionDiv.appendChild(sectionTitleDiv);
-	localSectionDiv.appendChild(sectionContentDiv);
+	sectionDiv.appendChild(sectionTitleDiv);
+	sectionDiv.appendChild(sectionContentDiv);
 
 	sectionTitleDiv.addEventListener('click', () => {
 		if (sectionTitleDiv.nextSibling.style.display === "flex") {
@@ -141,7 +170,7 @@ function buildSection(sectionDiv, sectionData) {
 		default:
 			console.error(`Unknown section type: ${sectionData.type}`);
 	}
-	return localSectionDiv;
+	return sectionDiv;
 }
 
 function buildSectionText(sectionContentDiv, sectionContent) {
@@ -150,14 +179,13 @@ function buildSectionText(sectionContentDiv, sectionContent) {
 }
 
 function buildSectionTable(sectionContentDiv, sectionContent) {
-	let localSectionContentDiv = sectionContentDiv;
 	for (const entry of sectionContent) {
 		const tableEntryDiv = createElement('div', 'tableEntryDiv');
 		const tableKeyDiv = createElement('div', 'tableKeyDiv');
 		const tableIconDiv = createElement('div', 'entryIconDiv');
 		const entryDiv = createElement('div', 'entryDiv');
 
-		localSectionContentDiv.appendChild(tableEntryDiv);
+		sectionContentDiv.appendChild(tableEntryDiv);
 
 		tableEntryDiv.appendChild(tableIconDiv);
 		tableEntryDiv.appendChild(tableKeyDiv);
@@ -183,20 +211,15 @@ function buildSectionTable(sectionContentDiv, sectionContent) {
 				entryDiv.firstChild.style.display = 'block';
 			}
 		});
-
-		if (checkOverflow()) {
-			localSectionContentDiv = handleOverflow(tableEntryDiv);
-		}
 	}
-	return localSectionContentDiv;
+	return sectionContentDiv;
 }
 
 function buildSectionEntries(sectionContentDiv, sectionContent) {
-	let localSectionContentDiv = sectionContentDiv;
 	for (const entry of sectionContent) {
 		const entryDiv = createElement('div', 'entryDiv');
 
-		localSectionContentDiv.appendChild(entryDiv);
+		sectionContentDiv.appendChild(entryDiv);
 		buildEntryDiv(entryDiv, entry);
 
 		entryDiv.firstChild.addEventListener('click', () => {
@@ -213,22 +236,17 @@ function buildSectionEntries(sectionContentDiv, sectionContent) {
 				entryDiv.firstChild.style.display = 'block';
 			}
 		});
-
-		if (checkOverflow()) {
-			localSectionContentDiv = handleOverflow(entryDiv);
-		}
 	}
-	return localSectionContentDiv;
+	return sectionContentDiv;
 }
 
 function buildSectionNested(sectionContentDiv, sectionContent) {
-	let localSectionContentDiv = sectionContentDiv;
 	for (const entry of sectionContent) {
 		const entryDiv = createElement('div', 'entryDiv');
 		const entryTitleDiv = createElement('div', 'entryTitleDiv');
 		const h1ListDiv = createElement('div', 'innerListDivH1');
 
-		localSectionContentDiv.appendChild(entryDiv);
+		sectionContentDiv.appendChild(entryDiv);
 
 		entryTitleDiv.innerHTML = parseText(entry?.h1);
 		entryDiv.appendChild(entryTitleDiv);
@@ -256,20 +274,15 @@ function buildSectionNested(sectionContentDiv, sectionContent) {
 				innerEntryDiv.addEventListener('dblclick', () => { if (isDBClickEnabled) innerEntryDiv.style.display = 'none'; });
 				h1ListDiv.appendChild(innerEntryDiv);
 			}
-
-			if (checkOverflow()) {
-				localSectionContentDiv = handleOverflow(entryDiv);
-			}
 			continue;
 		}
 
-		let innerLocalContentDiv = h1ListDiv;
 		for (let i = 0; i < entry.list.length; i++) {
 			const entrySubtitleDiv = createElement('div', 'entrySubtitleDiv');
 			const h2ListDiv = createElement('div', 'innerListDivH2');
 
 			entrySubtitleDiv.innerHTML = parseText(entry.list[i].h2);
-			innerLocalContentDiv.appendChild(h2ListDiv);
+			h1ListDiv.appendChild(h2ListDiv);
 			h2ListDiv.appendChild(entrySubtitleDiv);
 
 			h2ListDiv.firstChild.addEventListener('click', () => {
@@ -293,14 +306,9 @@ function buildSectionNested(sectionContentDiv, sectionContent) {
 				innerEntryDiv.addEventListener('dblclick', () => { if (isDBClickEnabled) innerEntryDiv.style.display = 'none'; });
 				h2ListDiv.appendChild(innerEntryDiv);
 			}
-
-			if (checkOverflow()) {
-				localSectionContentDiv = handleOverflow(h2ListDiv);
-				innerLocalContentDiv = localSectionContentDiv.firstChild.firstChild;
-			}
 		}
 	}
-	return localSectionContentDiv;
+	return sectionContentDiv;
 }
 
 function buildEntryDiv(entryDiv, entryContent) {
@@ -333,25 +341,20 @@ function buildEntryDiv(entryDiv, entryContent) {
 	return entryDiv;
 }
 
-function checkOverflow() {
-	return false;
-	// return globalCurrPageDiv.clientHeight < globalCurrContentDiv.clientHeight
-}
+/* function checkOverflow(pageDiv) {
+	let overflowed = pageDiv.style.overflow;
 
-// function checkOverflow(pageDiv) {
-// 	let overflowed = pageDiv.style.overflow;
+	if ( !overflowed || overflowed === "visible" )
+		pageDiv.style.overflow = "hidden";
 
-// 	if ( !overflowed || overflowed === "visible" )
-// 		pageDiv.style.overflow = "hidden";
+	let isOverflowing = (pageDiv.clientWidth < pageDiv.scrollWidth) || (pageDiv.clientHeight < pageDiv.scrollHeight);
 
-// 	let isOverflowing = (pageDiv.clientWidth < pageDiv.scrollWidth) || (pageDiv.clientHeight < pageDiv.scrollHeight);
+	pageDiv.style.overflow = overflowed;
 
-// 	pageDiv.style.overflow = overflowed;
+	return isOverflowing;
+} */
 
-// 	return isOverflowing;
-// }
-
-function handleOverflow(warpDiv) { /*globalPageListDiv, globalCurrPageDiv, globalCurrContentDiv, */
+/* function handleOverflow(warpDiv) {
 	const index = globalPageListDiv.children.length;
 	const warpContentClone = warpDiv.cloneNode(true);
 
@@ -381,12 +384,15 @@ function handleOverflow(warpDiv) { /*globalPageListDiv, globalCurrPageDiv, globa
 	globalPageListDiv.appendChild(globalCurrPageDiv);
 
 	return tempAncestor.firstChild;
-}
+} */
 
 function createElement(tagName, className, id) {
 	let createdElement = document.createElement(tagName);
-	createdElement.setAttribute('class', className);
-	if (id != undefined) {
+
+	if (className) {
+		createdElement.setAttribute('class', className);
+	}
+	if (id) {
 		createdElement.setAttribute('id', id);
 	}
 	return createdElement;
@@ -403,14 +409,9 @@ function parseText(content) {
 	result = result.replace(/\*\*(.*?)\*\*/g, "<b>$1</b>");
 	result = result.replace(/__(.*?)__/g, "<i>$1</i>");
 
-	const match_underline = result.match(/[^:]+(?=:: )/);
-	if (match_underline) {
-		result = result.replace(match_underline, `<span class="underline">${match_underline}</span>`);
-		result = result.replace(":: ", ": ");
-	}
+	result = result.replace(/::(.*?)::/g, "<span class=\"underline\">$1</span>");
 
 	const matches_links = result.match(/!!<[^>]+><[^>]+>/g);
-	console.log(matches_links);
 	if (matches_links) {
 		for (const match of matches_links) {
 			const [text, url] = match.match(/(?<=<)(.+?)(?=>)/g);
@@ -437,7 +438,7 @@ function parseIcon(content) {
 	if (content == undefined || !content || content.length === 0) {
 		return "";
 	}
-	const html = `<div class="entryIconContainerDiv"><img src="${content}" alt="Icon" class="entryIcon"></div>`;
+	const html = `<div class="entryIconContainerDiv"><img src="${content}" alt="Icon"></div>`;
 	return html;
 }
 

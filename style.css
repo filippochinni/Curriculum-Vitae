@@ -2,7 +2,7 @@ body {
 	font-family: 'Calibri', 'Arial';
 	font-size: 1rem;
 
-	color: #111;
+	color: #111111;
 }
 
 #pageListDiv {
@@ -18,7 +18,7 @@ body {
 	height: fit-content;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 	background-color: #fdfdfd;
-	border: 1px solid #ddd;
+	border: 1px solid #dddddd;
 
 	display: flex;
 	flex-direction: column;
@@ -468,8 +468,8 @@ footer > .sectionTitleDeco {
 	top: 20px;
 	left: 20px;
 
-	width: 20px;
-	height: 20px;
+	width: 40px;
+	height: 40px;
 
 	cursor: pointer;
 
@@ -507,6 +507,10 @@ footer > .sectionTitleDeco {
 	}
 
 	#downloadButton {
+		display: none;
+	}
+
+	#secretButton {
 		display: none;
 	}
 }
