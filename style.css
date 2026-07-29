@@ -301,6 +301,16 @@ span .sectionToggleIcon {
 	font-size: 1rem;
 }
 
+.innerEntryDivList {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	flex-wrap: wrap;
+
+	width: 100%;;
+}
+
 .tableEntryDiv {
 	display: flex;
 	flex-direction: row;

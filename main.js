@@ -242,6 +242,7 @@ function buildSectionNested(sectionContentDiv, sectionContent) {
 		const entryDiv = createElement('div', 'entryDiv');
 		const entryTitleDiv = createElement('div', 'entryTitleDiv');
 		const h1ListDiv = createElement('div', 'innerListDivH1');
+		const innerEntryDivListH1 = createElement('div', 'innerEntryDivList');
 
 		sectionContentDiv.appendChild(entryDiv);
 
@@ -265,22 +266,27 @@ function buildSectionNested(sectionContentDiv, sectionContent) {
 		});
 
 		if (!entry.list[0]?.h2) {
+			h1ListDiv.appendChild(innerEntryDivListH1);
 			for (const innerEntry of entry.list) {
 				const innerEntryDiv = createElement('div', 'innerEntryDiv');
 				innerEntryDiv.innerHTML = parseText(innerEntry);
 				innerEntryDiv.addEventListener('dblclick', () => { if (isDBClickEnabled) innerEntryDiv.style.display = 'none'; });
-				h1ListDiv.appendChild(innerEntryDiv);
+				innerEntryDiv.innerHTML += "&ensp;|&ensp;";
+				innerEntryDivListH1.appendChild(innerEntryDiv);
 			}
+			innerEntryDivListH1.lastChild.innerHTML = innerEntryDivListH1.lastChild.innerHTML.replace(/\s\|\s/g, "");
 			continue;
 		}
 
 		for (let i = 0; i < entry.list.length; i++) {
 			const entrySubtitleDiv = createElement('div', 'entrySubtitleDiv');
 			const h2ListDiv = createElement('div', 'innerListDivH2');
+			const innerEntryDivListH2 = createElement('div', 'innerEntryDivList');
 
 			entrySubtitleDiv.innerHTML = parseText(entry.list[i].h2);
 			h1ListDiv.appendChild(h2ListDiv);
 			h2ListDiv.appendChild(entrySubtitleDiv);
+			h2ListDiv.appendChild(innerEntryDivListH2);
 
 			h2ListDiv.firstChild.addEventListener('click', () => {
 				if (h2ListDiv.classList.contains('collapsed')) {
@@ -301,8 +307,10 @@ function buildSectionNested(sectionContentDiv, sectionContent) {
 				const innerEntryDiv = createElement('div', 'innerEntryDiv');
 				innerEntryDiv.innerHTML = parseText(innerEntry);
 				innerEntryDiv.addEventListener('dblclick', () => { if (isDBClickEnabled) innerEntryDiv.style.display = 'none'; });
-				h2ListDiv.appendChild(innerEntryDiv);
+				innerEntryDiv.innerHTML += "&ensp;|&ensp;";
+				innerEntryDivListH2.appendChild(innerEntryDiv);
 			}
+			innerEntryDivListH2.lastChild.innerHTML = innerEntryDivListH2.lastChild.innerHTML.replace(/\s\|\s/g, "");
 		}
 	}
 	return sectionContentDiv;
