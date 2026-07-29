@@ -254,7 +254,7 @@ function buildSectionNested(sectionContentDiv, sectionContent) {
 			if (entryDiv.classList.contains('collapsed')) {
 				entryDiv.classList.remove('collapsed');
 				for (const child of entryDiv.children) {
-					child.style.display = 'block';
+					child.style.display = 'flex';
 				}
 			} else {
 				entryDiv.classList.add('collapsed');
@@ -292,7 +292,7 @@ function buildSectionNested(sectionContentDiv, sectionContent) {
 				if (h2ListDiv.classList.contains('collapsed')) {
 					h2ListDiv.classList.remove('collapsed');
 					for (const child of h2ListDiv.children) {
-						child.style.display = 'block';
+						child.style.display = 'flex';
 					}
 				} else {
 					h2ListDiv.classList.add('collapsed');

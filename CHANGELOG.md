@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Fixed: items lists was displaying incorrectly after toggling accordion.
+
 ## [1.2.0] - 2026-07-29
 
 ### Added
