@@ -446,6 +446,10 @@ li::marker {
 	margin-bottom: 3%;
 }
 
+.sectionContentDiv:last-child > .entryDiv > .marginDiv {
+	margin-bottom: 1%;
+}
+
 span.underline {
 	text-decoration: underline;
 	text-decoration-thickness: 1.5px;
