@@ -1,5 +1,5 @@
 export const DATA = {
-	version: "v1.3.0",
+	version: "v1.3.1",
 	header: {
 		picture: "./images/picture.png",
 		fullName: "Filippo Chinni Carella",
@@ -14,12 +14,22 @@ export const DATA = {
 			sectionTitle: "Presentation",
 			type: "text-only",
 			content: "Graduate Student in Computer Science. Software Engineer and Developer.\n\
-			Specialized in Software Design and Documentation. Educated and experienced in AI applications and Data Engineering."
+			Specialized in Software Design and Documentation. Educated and experienced in AI and Data Engineering."
 		},
 		{
 			sectionTitle: "Education",
 			type: "generic-table",
 			content: [
+				{
+					entryKey: "Nov 2024 - Sep 2025",
+					title: "Alta Scuola Politecnica",
+					subtitle: "Politecnico di Milano & Politecnico di Torino",
+					description: "Alta Scuola Politecnica (lit. Higher Polytechnic School) is a Multidisciplinary and unique international honour program created by Politecnico di Milano and Politecnico di Torino.\nOnly the best 150 students from all master\'s courses of the two universities are selected each academic year.\nASP students are initiated into a path of advanced interdisciplinary training to understand the complex relationships between science, innovation, technology and socio-economic systems.",
+					grade: "",
+					extra: "!!<Official Admitted Candidates List><https://www.polito.it/sites/default/files/2024-11/DD%202280%20del%2018%20novembre%202024_ASP_Graduatoria%20finale%202024_25_F.pdf> | [!!<Alt Link><https://web.archive.org/web/20250613133423/https:/www.polito.it/sites/default/files/2024-11/DD%202280%20del%2018%20novembre%202024_ASP_Graduatoria%20finale%202024_25_F.pdf>]",
+					media: [],
+					icon: "./images/icons/alta_scuola_politecnica.jpg"
+				},
 				{
 					entryKey: "Sep 2024 - Present",
 					title: "::M.sc Degree::: Computer Engineering (Curriculum:\nArtificial Intelligence and Data Analytics)",
@@ -102,7 +112,7 @@ export const DATA = {
 					list: [
 						"**Software Engineering:** developed multiple full-cycle software projects of all kinds using best practices for design, implementation, and processes",
 						"**Software Design:** designed diagrams and schemas on all levels of abstraction",
-						"**Software Documentation:** written countless documentation documents for many projects, including Requirements Engineering, Software Design, UI/UX Design, Software Testing, ...",
+						"**Software Documentation:** written countless documentation documents for many projects, including Requirements Engineering, Software Design, UI/UX Design, Software Testing, and more",
 						"**Software Testing & Debugging:** have experience and natural talent in finding bugs",
 						"**Project Management:** can make estimations and plans; experienced with Agile methodologies (SCRUM) and ALM tools"
 					]
@@ -111,7 +121,7 @@ export const DATA = {
 					h1: "Artificial Intelligence and Data Science",
 					list: [
 						"**Machine Learning:** attended multiple courses on the topic, and based my Bachelor's Thesis on a Machine/Deep Learning theme, Hyperparameter Optimization",
-						"**Data Analysis:** attended a specilized extra course on Intelligent Data Analysis",
+						"**Data Analysis:** attended a specialized extra course on Intelligent Data Analysis",
 						"**Big Data Processing:** experience with tools such as Hadoop, Spark, and MapReduce"
 					]
 				},
@@ -363,17 +373,7 @@ export const DATA = {
 			type: "generic-table",
 			content: [
 				{
-					entryKey: "Nov 2024 - Sep 2025",
-					title: "Alta Scuola Politecnica",
-					subtitle: "Politecnico di Milano & Politecnico di Torino",
-					description: "Alta Scuola Politecnica (lit. Higher Polytechnic School) is a Multidisciplinary and unique international honour program created by Politecnico di Milano and Politecnico di Torino.\nOnly the best 150 students from all master\'s courses of the two universities are selected each academic year.\nASP students are initiated into a path of advanced interdisciplinary training to understand the complex relationships between science, innovation, technology and socio-economic systems.",
-					grade: "",
-					extra: "!!<Official Admitted Candidates List><https://www.polito.it/sites/default/files/2024-11/DD%202280%20del%2018%20novembre%202024_ASP_Graduatoria%20finale%202024_25_F.pdf> | [!!<Alt Link><https://web.archive.org/web/20250613133423/https:/www.polito.it/sites/default/files/2024-11/DD%202280%20del%2018%20novembre%202024_ASP_Graduatoria%20finale%202024_25_F.pdf>]",
-					media: [],
-					icon: "./images/icons/alta_scuola_politecnica.jpg"
-				},
-				{
-					entryKey: "28/03 - 03/04 (2019)",
+					entryKey: "28/03 - 03/04\n(2019)",
 					title: "Change the World Model United Nations (CWMUN) 2019",
 					subtitle: "United Nations Headquarters - New York City, NY, USA",
 					description: "CWMUN is one of the most important multidisciplinary United Nations forums.\nIt takes place at the UN Headquarters in New York and is attended by over 3000 people, including high school and university students, ambassadors, former ministers and prime ministers, sport champions and UN Officials.\nAfter over 60 hours of seminars and individual study in preparation for the event, I had the opportunity to actively discuss the most important global geopolitical topics with the other participants from all over the world.",

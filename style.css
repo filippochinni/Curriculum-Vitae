@@ -1,6 +1,6 @@
 body {
 	font-family: 'Calibri', 'Arial';
-	font-size: 1rem;
+	font-size: 0.925rem;
 
 	color: #111111;
 }
@@ -160,7 +160,6 @@ header {
 
 	width: 100%;
 	height: fit-content;
-	gap: 3%;
 }
 
 .sectionDiv {
@@ -171,8 +170,6 @@ header {
 
 	width: 100%;
 	height: fit-content;
-
-	margin-bottom: 3%;
 }
 
 .sectionTitleDiv {
@@ -185,6 +182,7 @@ header {
 	width: 100%;
 
 	margin-bottom: 1.8%;
+	margin-top: 2%;
 
 	cursor: pointer;
 	user-select: none;
@@ -241,6 +239,7 @@ span .sectionToggleIcon {
 	border-bottom: 0.12rem solid dodgerblue;
 	transform: rotate(45deg);
 	transform-origin: center;
+	transition: transform 0.2s ease;
 	cursor: pointer;
 }
 
@@ -309,7 +308,7 @@ li::marker {
 }
 
 .innerEntryDiv {
-	font-size: 1rem;
+	font-size: inherit;
 }
 
 .innerEntryDivList {
@@ -334,6 +333,7 @@ li::marker {
 }
 
 .tableKeyDiv {
+	font-size: 1rem;
 	white-space: nowrap;
 	width: 35%;
 }
@@ -349,12 +349,12 @@ li::marker {
 }
 
 .entryTitleDiv {
-	font-size: 1.0rem;
+	font-size: 1rem;
 	font-weight: bold;
 }
 
 .entrySubtitleDiv {
-	font-size: 1.0rem;
+	font-size: inherit;
 	font-weight: bold;
 	color: darkgray;
 
@@ -362,23 +362,21 @@ li::marker {
 }
 
 .entryDescriptionDiv {
-	font-size: 1rem;
+	font-size: inherit;
 }
 
 .entryGradeDiv {
-	font-size: 1rem;
+	font-size: inherit;
 	margin-top: 1.5%;
 }
 
 .entryExtraDiv {
-	font-size: 1rem;
+	font-size: inherit;
 	margin-top: 1.5%;
 }
 
 .entryMediaDiv {
 	display: flex;
-
-	margin-bottom: 4%;
 }
 
 .mediaGalleryDiv {
@@ -442,6 +440,10 @@ li::marker {
 	height: 100%;
 	object-fit: cover;
 	border-radius: 50%;
+}
+
+.marginDiv {
+	margin-bottom: 3%;
 }
 
 span.underline {

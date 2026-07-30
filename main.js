@@ -377,7 +377,8 @@ function buildEntryDiv(entryDiv, entryContent) {
 	if (entryContent?.description)	entryDiv.appendChild(entryDescriptionDiv);
 	if (entryContent?.grade)	entryDiv.appendChild(entryGradeDiv);
 	if (entryContent?.extra)	entryDiv.appendChild(entryExtraDiv);
-	/* if (entryContent?.media) */	entryDiv.appendChild(entryMediaDiv);
+	if (entryContent?.media)	entryDiv.appendChild(entryMediaDiv);
+	entryDiv.appendChild(createElement('div', 'marginDiv'));
 
 	entryDescriptionDiv.addEventListener('dblclick', () => { if (isDBClickEnabled) entryDescriptionDiv.style.display = 'none'; });
 	entryGradeDiv.addEventListener('dblclick', () => { if (isDBClickEnabled) entryGradeDiv.style.display = 'none'; });
