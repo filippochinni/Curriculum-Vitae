@@ -593,6 +593,10 @@ footer > .sectionTitleDeco {
 		display: none !important;
 	}
 
+	.tableEntryDiv > .collapsed > .entryTitleDiv {
+		display: flex !important;
+	}
+
 	#downloadButton {
 		display: none;
 	}
