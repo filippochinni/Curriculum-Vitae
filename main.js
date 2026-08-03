@@ -3,6 +3,7 @@ import { DATA } from "./data.js";
 
 let isDBClickEnabled = false;
 
+const PAGE_URL = "https://filippochinni.github.io/Curriculum-Vitae/";
 const SECTION_ORDER = [
 	"Presentation",
 	"Education",
@@ -15,7 +16,7 @@ const SECTION_ORDER = [
 	"Languages",
 	"Studies and Courses List",
 	"Competitive Sports",
-]
+];
 
 main();
 
@@ -99,16 +100,20 @@ function buildFooter(footerData) {
 	const bottomFooterDiv = createElement('div', 'footerElem', 'bottomFooterDiv');
 	const signatureDiv = createElement('div', 'footerElem', 'signatureDiv');
 	const signatureContainerDiv = createElement('div', 'footerElem', 'signatureContainerDiv');
+	const fullCVPageUrlDiv = createElement('div', 'footerElem');
 	const lawDiv = createElement('div', 'footerElem', 'lawDiv');
 	const dateDiv = createElement('div', 'footerElem', 'dateDiv');
 
 	signatureDiv.innerHTML = `<img src="${footerData.signature}" alt="Signature">`;
+
+	fullCVPageUrlDiv.innerHTML = `Expanded CV with pictures and descriptions: <a href="${PAGE_URL}" target="_blank">Full CV</a>`;
 
 	lawDiv.innerHTML = parseText(footerData.law);
 	dateDiv.innerHTML = parseText(footerData.date);
 
 	signatureContainerDiv.appendChild(signatureDiv);
 	mFooter.appendChild(createElement('div', 'sectionTitleDeco'));
+	// mFooter.appendChild(fullCVPageUrlDiv);
 	mFooter.appendChild(lawDiv);
 	bottomFooterDiv.appendChild(dateDiv);
 	bottomFooterDiv.appendChild(signatureContainerDiv);

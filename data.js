@@ -1,5 +1,5 @@
 export const DATA = {
-	version: "v1.3.1",
+	version: "v1.3.5",
 	header: {
 		picture: "./images/picture.png",
 		fullName: "Filippo Chinni Carella",
@@ -235,13 +235,14 @@ export const DATA = {
 						{
 							h2: "Notable Services and Libraries",
 							list: [
+								"Android SDK",
+								"Jetpack Compose",
 								"Node.js",
 								"Maven",
 								"Gradle",
 								"Hadoop",
 								"Spark",
 								"MapReduce",
-								"PyTorch",
 							]
 						},
 						{

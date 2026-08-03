@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed: items lists was displaying incorrectly after toggling accordion.
 - Added a new section type called `bullet-lists`
 - Added new section "Skills"
+- Added new sub-section "Programming Techniques and Technologies"
+- Minor Fixes and Improvements.
 
 ## [1.2.0] - 2026-07-29
 
