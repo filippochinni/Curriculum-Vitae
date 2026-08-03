@@ -114,7 +114,8 @@ export const DATA = {
 						"**Software Design:** designed diagrams and schemas on all levels of abstraction",
 						"**Software Documentation:** written countless documentation documents for many projects, including Requirements Engineering, Software Design, UI/UX Design, Software Testing, and more",
 						"**Software Testing & Debugging:** have experience and natural talent in finding bugs",
-						"**Project Management:** can make estimations and plans; experienced with Agile methodologies (SCRUM) and ALM tools"
+						"**Project Management:** can make estimations and plans; experienced with Agile methodologies (SCRUM) and ALM tools (GitHub, GitLab, Redmine, Jira)",
+						"**Version Control:** experienced with versioning tools (Git, SVN) and best practices (GitFlow)"
 					]
 				},
 				{
@@ -130,7 +131,7 @@ export const DATA = {
 					list: [
 						"**Java:** built several projects including 2 Android Apps",
 						"**Python:** developed numerous personal utility projects, and a Machine Learning project for the experiments of my Bachelor's Thesis",
-						"**JavaScript:** deployed various web projects, including fan websites and the builder of this CV",
+						"**JavaScript:** deployed various small web projects, including fan websites and the builder of this CV",
 						"**C:** had extensive practice during educational courses; have experience in embedded programming and have built a Pacman game on a SoC",
 					]
 				},
@@ -138,7 +139,7 @@ export const DATA = {
 					h1: "Soft Skills",
 					list: [
 						"**Proactive Learning:** very good at self-learning and excited to try new skills and processes",
-						"**Leadership:** led every group project in university as Team Leader, always achieving the best grade, and also winning an award for one of our projects",
+						"**Leadership:** led every group project in university as Team Leader, always achieving the best grades, and also winning an award for one of our projects",
 						"**Teamwork:** educational experience was filled with group projects, where I learned the most about teamwork being the Team Leader",
 						"**Precision:** have particular care for quality, tidiness, and completeness in my work",
 						"**Critical Thinking:** analyze problems and ask whys behind decisions to draw thoughtful conclusions",
@@ -149,7 +150,7 @@ export const DATA = {
 			]
 		},
 		{
-			sectionTitle: "Full Hard Skills List",
+			sectionTitle: "Hard Skills List",
 			type: "nested-lists",
 			content: [
 				{
@@ -159,8 +160,8 @@ export const DATA = {
 							h2: "Software Engineering Skills",
 							list: [
 								"Software Architecture Design",
+								"App Development",
 								"Web Development",
-								"Mobile Software Development",
 								"Embedded Development",
 								"Agile Methodologies (SCRUM)",
 								"Database Design",
@@ -168,6 +169,16 @@ export const DATA = {
 								"Software Documentation",
 								"Software UML Design",
 							],
+						},
+						{
+							h2: "Programming Techniques and Technologies",
+							list: [
+								"Code Review",
+								"Unit Testing",
+								"REST API & Swagger",
+								"Relational DBMS",
+								"NoSQL Databases",
+							]
 						},
 						{
 							h2: "Data Science and Machine Learning Skills",
@@ -180,10 +191,10 @@ export const DATA = {
 							],
 						},
 						{
-							h2: "Programming Skills",
+							h2: "Programming Paradigms",
 							list: [
 								"Imperative and Modular Programming",
-								"Object-Oriented Programming",
+								"Object-Oriented Programming (OOP)",
 								"Event-Driven Programming",
 								"Web Programming",
 								"Embedded Programming",
@@ -202,6 +213,7 @@ export const DATA = {
 								"JavaScript",
 								"C",
 								"C++",
+								"Kotlin",
 								"SQL",
 								"Assembly (ARM)",
 								"Rust",
@@ -228,6 +240,7 @@ export const DATA = {
 								"Gradle",
 								"Hadoop",
 								"Spark",
+								"MapReduce",
 								"PyTorch",
 							]
 						},
@@ -282,8 +295,8 @@ export const DATA = {
 							list: [
 								"SSH",
 								"SonarCloud",
-								"Google Firebase",
 								"Fortify",
+								"Google Firebase",
 								"Azure ML",
 							]
 						}
@@ -292,7 +305,7 @@ export const DATA = {
 			]
 		},
 		{
-			sectionTitle: "Full Studies and Courses",
+			sectionTitle: "Studies and Courses List",
 			type: "nested-lists",
 			content: [
 				{
@@ -338,6 +351,8 @@ export const DATA = {
 					list: [
 						"Physics",
 						"Economics and Corporate Business",
+						"Innovation",
+						"Business",
 					],
 				},
 			]
@@ -384,7 +399,7 @@ export const DATA = {
 				},
 				{
 					entryKey: "16/05/2015",
-					title: "International Competition for Mathematical and Logical Games - Italian Finals - 22nd Edition",
+					title: "International Competition for Mathematical and Logical Games - 22nd Edition - Italian Finals",
 					subtitle: "Bocconi University - Milan, Italy",
 					description: "The \"Championnat International des Jeux Mathématiques et Logiques\" is an international mathematics competition.\nAfter achieving 2nd place in the regional competition, I participated in the national final held at \"Centro PRISTEM\" in Bocconi University.",
 					grade: "",

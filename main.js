@@ -9,11 +9,11 @@ const SECTION_ORDER = [
 	"Work Experience",
 	"Portfolio",
 	"Skills",
-	"Full Hard Skills List",
+	"Hard Skills List",
 	"Awards",
 	"Projects and Competitions",
 	"Languages",
-	"Full Studies and Courses",
+	"Studies and Courses List",
 	"Competitive Sports",
 ]
 
@@ -387,51 +387,6 @@ function buildEntryDiv(entryDiv, entryContent) {
 
 	return entryDiv;
 }
-
-/* function checkOverflow(pageDiv) {
-	let overflowed = pageDiv.style.overflow;
-
-	if ( !overflowed || overflowed === "visible" )
-		pageDiv.style.overflow = "hidden";
-
-	let isOverflowing = (pageDiv.clientWidth < pageDiv.scrollWidth) || (pageDiv.clientHeight < pageDiv.scrollHeight);
-
-	pageDiv.style.overflow = overflowed;
-
-	return isOverflowing;
-} */
-
-/* function handleOverflow(warpDiv) {
-	const index = globalPageListDiv.children.length;
-	const warpContentClone = warpDiv.cloneNode(true);
-
-	let tempAncestor = warpDiv;
-	let appendList = [];
-	while (tempAncestor.classList.contains('sectionDiv') === false) {
-		tempAncestor = tempAncestor.parentElement;
-		let temp = tempAncestor.cloneNode();
-		temp.innerHTML = "";
-		appendList.push(temp);
-	}
-	if (appendList.length != 0)
-		appendList[0].appendChild(warpContentClone);
-	for (let i = 1; i < appendList.length; i++) {
-		appendList[i].appendChild(appendList[i-1]);
-		tempAncestor = appendList[i];
-	}
-	warpDiv.parentElement.removeChild(warpDiv);
-
-	const newPageDiv = createElement('div', 'pageDiv', `page${index + 1}`);
-	const newContentDiv = createElement('div', 'contentDiv', `contentDiv${index + 1}`);
-	newContentDiv.appendChild(tempAncestor);
-	newPageDiv.appendChild(newContentDiv);
-
-	globalCurrPageDiv = newPageDiv;
-	globalCurrContentDiv = newContentDiv;
-	globalPageListDiv.appendChild(globalCurrPageDiv);
-
-	return tempAncestor.firstChild;
-} */
 
 function createElement(tagName, className, id) {
 	let createdElement = document.createElement(tagName);
