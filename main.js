@@ -68,13 +68,13 @@ function buildSecretActions(data) {
         option.text = div.querySelector('.entryTitleDiv')?.innerHTML;
         removableDivsMenu.appendChild(option);
 	};
-	const lambdaHandleDBClick = () => { if (isDBClickEnabled) selectedDiv.style.display = 'none'; };
+	const lambdaHandleDBClick = (toHide) => { if (isDBClickEnabled) toHide.style.display = 'none'; };
 	removableDivsMenu.addEventListener('change', (e) => {
 		const selectedDiv = removableDivs[e.target.value];
-		selectedDiv.addEventListener('dblclick', lambdaHandleDBClick);
+		selectedDiv.addEventListener('dblclick', () => { lambdaHandleDBClick(selectedDiv) });
 		for (const key in removableDivs) {
 			if (key !== e.target.value) {
-				removableDivs[key].removeEventListener('dblclick', lambdaHandleDBClick);
+				removableDivs[key].removeEventListener('dblclick', () => { lambdaHandleDBClick(removableDivs[key]) });
 			}
 		}
 	});

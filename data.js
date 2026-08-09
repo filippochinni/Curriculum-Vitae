@@ -254,6 +254,7 @@ export const DATA = {
 								"Pandas",
 								"NumPy",
 								"Matplotlib",
+								"Scikit-learn",
 							]
 						},
 						{

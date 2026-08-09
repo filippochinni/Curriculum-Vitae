@@ -657,19 +657,19 @@ footer > .sectionTitleDeco {
 	}
 
 	#secretButton {
-		display: none;
+		display: none !important;
 	}
 
 	#secretLocationMenu {
-		display: none;
+		display: none !important;
 	}
 
 	#removableDivsMenu {
-		display: none;
+		display: none !important;
 	}
 
 	#secretSlimModeSwitch {
-		display: none;
+		display: none !important;
 	}
 
 	#fullCVPageUrlDiv {
