@@ -334,8 +334,14 @@ li::marker {
 
 .tableKeyDiv {
 	font-size: 1rem;
-	white-space: nowrap;
 	width: 35%;
+	white-space: nowrap;
+}
+
+.tableKeyDiv.slimMode {
+	font-size: 1rem;
+	width: 20% !important;
+	white-space: unset !important;
 }
 
 .entryDiv {
@@ -356,7 +362,7 @@ li::marker {
 .entrySubtitleDiv {
 	font-size: inherit;
 	font-weight: bold;
-	color: darkgray;
+	color: #979797;
 
 	margin-top: 1%;
 }
@@ -459,9 +465,8 @@ span.underline {
 .entryExtraDiv {
 	span.underline {
 		text-decoration: underline;
-		text-decoration-thickness: 2px;
+		text-decoration-thickness: 1.5px;
 		text-decoration-color: cyan;
-
 	}
 }
 
@@ -519,6 +524,16 @@ span.underline {
 	margin-top: 1%;
 }
 
+#fullCVPageUrlDiv {
+	font-size: 0.8rem;
+	margin-top: 1%;
+	display: none;
+}
+
+#fullCVPageUrlDiv > .sectionTitleDeco {
+	margin-top: 1%;
+}
+
 footer > .sectionTitleDeco {
 	margin-top: 1%;
 }
@@ -529,7 +544,7 @@ footer > .sectionTitleDeco {
 	justify-content: center;
 	align-items: center;
 
-	position: absolute;
+	position: fixed;
 	top: 20px;
 	right: 20px;
 
@@ -566,6 +581,42 @@ footer > .sectionTitleDeco {
 
 	border: none;
 	background-color: transparent;
+}
+
+#secretLocationMenu {
+	position: absolute;
+    top: 50px;
+    left: 20px;
+    display: none;
+    z-index: 1000;
+
+	width: 150px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#removableDivsMenu {
+	position: absolute;
+	top: 80px;
+	left: 20px;
+	display: none;
+	z-index: 1000;
+
+	width: 150px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#secretSlimModeSwitch {
+	position: absolute;
+	top: 110px;
+	left: 20px;
+	display: none;
+	z-index: 1000;
+	width: 20px;
+	height: 20px;
 }
 
 
@@ -607,6 +658,22 @@ footer > .sectionTitleDeco {
 
 	#secretButton {
 		display: none;
+	}
+
+	#secretLocationMenu {
+		display: none;
+	}
+
+	#removableDivsMenu {
+		display: none;
+	}
+
+	#secretSlimModeSwitch {
+		display: none;
+	}
+
+	#fullCVPageUrlDiv {
+		display: block;
 	}
 
 	.sectionTitleDiv::after {

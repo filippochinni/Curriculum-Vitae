@@ -3,7 +3,6 @@ import { DATA } from "./data.js";
 
 let isDBClickEnabled = false;
 
-const PAGE_URL = "https://filippochinni.github.io/Curriculum-Vitae/";
 const SECTION_ORDER = [
 	"Presentation",
 	"Education",
@@ -31,22 +30,74 @@ function main() {
 	mPageDiv.appendChild(mHeader);
 	mPageDiv.appendChild(mContentDiv);
 
-	const secretButton = createElement('button', '', 'secretButton');
-	secretButton.addEventListener('dblclick', () => {
-		alert(`Secret Button!\n` + `Editing is now ${isDBClickEnabled ? "Disabled" : "Enabled"}!`);
-		isDBClickEnabled = !isDBClickEnabled;
-	});
-	mPageDiv.appendChild(secretButton);
 
-	for (let i = 0; i < DATA.sections.length; i++) {
-		const sectionData = DATA.sections[i];
-		const mSectionDiv = createElement('div', 'sectionDiv', `section${i + 1}`);
-
+	for (const sectionData of DATA.sections) {
+		const mSectionDiv = createElement('div', 'sectionDiv', `section-${sectionData.sectionTitle.replace(/\s+/g, '')}`);
 		mContentDiv.appendChild(mSectionDiv);
 		buildSection(mSectionDiv, sectionData);
 		sortSections(mContentDiv);
 	}
+	const secretElements = buildSecretActions(DATA);
+	secretElements.forEach(elem => mPageDiv.appendChild(elem));
+
 	mContentDiv.appendChild(mFooter);
+}
+
+function buildSecretActions(data) {
+	const secretLocationMenu = createElement('select', '', 'secretLocationMenu');
+	const locationsData = data.header.locations;
+	locationsData.forEach(loc => {
+		const option = document.createElement('option');
+        option.value = loc;
+        option.text = loc;
+        secretLocationMenu.appendChild(option);
+    });
+	secretLocationMenu.addEventListener('change', (e) => {
+		const locationDisplay = document.getElementById('locationDiv');
+		locationDisplay.innerHTML = parseText(`${e.target.value} ${data.header.locationInfo}`);
+	});
+
+	const removableDivsMenu = createElement('select', '', 'removableDivsMenu');
+	const removableDivs = {
+		0: document.createElement('option', '', 'removableDivsMenuPlaceholder'),
+		1: document.querySelector("#section-Education .sectionContentDiv").lastChild,
+	};
+	for (const [key, div] of Object.entries(removableDivs)) {
+		const option = document.createElement('option');
+        option.value = key;
+        option.text = div.querySelector('.entryTitleDiv')?.innerHTML;
+        removableDivsMenu.appendChild(option);
+	};
+	const lambdaHandleDBClick = () => { if (isDBClickEnabled) selectedDiv.style.display = 'none'; };
+	removableDivsMenu.addEventListener('change', (e) => {
+		const selectedDiv = removableDivs[e.target.value];
+		selectedDiv.addEventListener('dblclick', lambdaHandleDBClick);
+		for (const key in removableDivs) {
+			if (key !== e.target.value) {
+				removableDivs[key].removeEventListener('dblclick', lambdaHandleDBClick);
+			}
+		}
+	});
+
+	const secretSlimModeSwitch = createElement('input', 'checkbox', 'secretSlimModeSwitch');
+	secretSlimModeSwitch.type = 'checkbox';
+	secretSlimModeSwitch.addEventListener('change', () => {
+	const tableKeysDateDivs = document.querySelectorAll('.tableKeyDiv');
+		tableKeysDateDivs.forEach(div => {
+			div.classList.toggle('slimMode');
+		});
+	});
+
+	const secretButton = createElement('button', '', 'secretButton');
+	secretButton.addEventListener('dblclick', () => {
+		alert(`Secret Button!\n` + `Editing is now ${isDBClickEnabled ? "Disabled" : "Enabled"}!`);
+		isDBClickEnabled = !isDBClickEnabled;
+		secretLocationMenu.style.display = (secretLocationMenu.style.display === 'block') ? 'none' : 'block';
+		removableDivsMenu.style.display = (removableDivsMenu.style.display === 'block') ? 'none' : 'block';
+		secretSlimModeSwitch.style.display = (secretSlimModeSwitch.style.display === 'block') ? 'none' : 'block';
+	});
+
+	return [secretButton, secretLocationMenu, removableDivsMenu, secretSlimModeSwitch];
 }
 
 function sortSections(contentDiv) {
@@ -87,7 +138,7 @@ function buildHeader(headerData) {
 	headerInfoDiv.appendChild(buildHeaderTableLayout([
 		{ icon: "&#x1F4C5", info: "Birth Date:", content: headerData.birthDate },
 		{ icon: "&#x1F310", info: "Nationality:",  content: headerData.nationality },
-		{ icon: "&#x1F30D", info: "Location:", content: headerData.location },
+		{ icon: "&#x1F30D", info: "Location:", content: `<span id="locationDiv">${headerData.location} ${headerData.locationInfo}</span>` },
 		{ icon: "&#128231", info: "Email:", content: headerData.email },
 		{ icon: "&#128188", info: "Other:", content: headerData.other }
 	]));
@@ -100,20 +151,21 @@ function buildFooter(footerData) {
 	const bottomFooterDiv = createElement('div', 'footerElem', 'bottomFooterDiv');
 	const signatureDiv = createElement('div', 'footerElem', 'signatureDiv');
 	const signatureContainerDiv = createElement('div', 'footerElem', 'signatureContainerDiv');
-	const fullCVPageUrlDiv = createElement('div', 'footerElem');
+	const fullCVPageUrlDiv = createElement('div', 'footerElem', 'fullCVPageUrlDiv');
 	const lawDiv = createElement('div', 'footerElem', 'lawDiv');
 	const dateDiv = createElement('div', 'footerElem', 'dateDiv');
 
 	signatureDiv.innerHTML = `<img src="${footerData.signature}" alt="Signature">`;
 
-	fullCVPageUrlDiv.innerHTML = `Expanded CV with pictures and descriptions: <a href="${PAGE_URL}" target="_blank">Full CV</a>`;
+	fullCVPageUrlDiv.innerHTML = parseText(footerData.pageUrl);
 
 	lawDiv.innerHTML = parseText(footerData.law);
 	dateDiv.innerHTML = parseText(footerData.date);
 
 	signatureContainerDiv.appendChild(signatureDiv);
 	mFooter.appendChild(createElement('div', 'sectionTitleDeco'));
-	// mFooter.appendChild(fullCVPageUrlDiv);
+	mFooter.appendChild(fullCVPageUrlDiv);
+	fullCVPageUrlDiv.appendChild(createElement('div', 'sectionTitleDeco'));
 	mFooter.appendChild(lawDiv);
 	bottomFooterDiv.appendChild(dateDiv);
 	bottomFooterDiv.appendChild(signatureContainerDiv);

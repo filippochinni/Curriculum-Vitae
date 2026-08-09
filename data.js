@@ -5,7 +5,9 @@ export const DATA = {
 		fullName: "Filippo Chinni Carella",
 		nationality: "Italian",
 		birthDate: "27/06/2002",
-		location: "Turin, Piedmont, Italy",
+		location: "Bari, Italy",
+		locations: ["Bari, Italy", "Turin, Italy", "Milan, Italy", "Bologna, Italy", "Rome, Italy", "Lugano, Switzerland"],
+		locationInfo: "**(Willing to relocate)**",
 		email: "!!<filippochinni02@gmail.com><filippochinni02@gmail.com>",
 		other: "!!<LinkedIn><https://www.linkedin.com/in/filippo-chinni-carella> | !!<GitHub><https://github.com/filippochinni>"
 	},
@@ -24,7 +26,7 @@ export const DATA = {
 					entryKey: "Nov 2024 - Sep 2025",
 					title: "Alta Scuola Politecnica",
 					subtitle: "Politecnico di Milano & Politecnico di Torino",
-					description: "Alta Scuola Politecnica (lit. Higher Polytechnic School) is a Multidisciplinary and unique international honour program created by Politecnico di Milano and Politecnico di Torino.\nOnly the best 150 students from all master\'s courses of the two universities are selected each academic year.\nASP students are initiated into a path of advanced interdisciplinary training to understand the complex relationships between science, innovation, technology and socio-economic systems.",
+					description: "Alta Scuola Politecnica (lit. Higher Polytechnic School) is a multidisciplinary international honour program created by Politecnico di Milano and Politecnico di Torino.\nOnly the best 150 students from all master\'s courses of the two universities are selected each academic year. ASP students are initiated into a path of advanced interdisciplinary training to understand the relationships between science, innovation, technology and socio-economic systems.",
 					grade: "",
 					extra: "!!<Official Admitted Candidates List><https://www.polito.it/sites/default/files/2024-11/DD%202280%20del%2018%20novembre%202024_ASP_Graduatoria%20finale%202024_25_F.pdf> | [!!<Alt Link><https://web.archive.org/web/20250613133423/https:/www.polito.it/sites/default/files/2024-11/DD%202280%20del%2018%20novembre%202024_ASP_Graduatoria%20finale%202024_25_F.pdf>]",
 					media: [],
@@ -32,7 +34,7 @@ export const DATA = {
 				},
 				{
 					entryKey: "Sep 2024 - Present",
-					title: "::M.sc Degree::: Computer Engineering (Curriculum:\nArtificial Intelligence and Data Analytics)",
+					title: "::M.sc Degree::: Computer Engineering (Curriculum: Artificial Intelligence and Data Analytics)",
 					subtitle: "Politecnico di Torino, Turin",
 					description: "",
 					grade: "",
@@ -42,7 +44,7 @@ export const DATA = {
 				},
 				{
 					entryKey: "Oct 2021 - Jul 2024",
-					title: "::B.sc Degree::: Computer Science and Technologies\nfor Software Production",
+					title: "::B.sc Degree::: Computer Science and Technologies for Software Production",
 					subtitle: "University of Bari \"Aldo Moro\", Bari",
 					description: "",
 					grade: "Grade 110/110 Cum Laude and Special Mention",
@@ -110,12 +112,14 @@ export const DATA = {
 				{
 					h1: "Software Developing",
 					list: [
-						"**Software Engineering:** developed multiple full-cycle software projects of all kinds using best practices for design, implementation, and processes",
-						"**Software Design:** designed diagrams and schemas on all levels of abstraction",
+						"**Software Engineering:** developed multiple full-cycle software projects of all kinds adopting the best practices from conception to deployment",
+						"**Software Design:** designed informal and UML diagrams and schemas on all levels of abstraction",
 						"**Software Documentation:** written countless documentation documents for many projects, including Requirements Engineering, Software Design, UI/UX Design, Software Testing, and more",
-						"**Software Testing & Debugging:** have experience and natural talent in finding bugs",
+						"**Software Testing & Debugging:** can execute Automated Testing and successfully find bugs",
 						"**Project Management:** can make estimations and plans; experienced with Agile methodologies (SCRUM) and ALM tools (GitHub, GitLab, Redmine, Jira)",
-						"**Version Control:** experienced with versioning tools (Git, SVN) and best practices (GitFlow)"
+						"**Version Control:** experienced with versioning tools (Git, SVN) and best practices (GitFlow)",
+						"**DevOps**: have knowledge of CI/CD pipelines and QA tools (SonarCloud, Fortify, ...) and processes"
+
 					]
 				},
 				{
@@ -123,7 +127,8 @@ export const DATA = {
 					list: [
 						"**Machine Learning:** attended multiple courses on the topic, and based my Bachelor's Thesis on a Machine/Deep Learning theme, Hyperparameter Optimization",
 						"**Data Analysis:** attended a specialized extra course on Intelligent Data Analysis",
-						"**Big Data Processing:** experience with tools such as Hadoop, Spark, and MapReduce"
+						"**Big Data Processing:** experience with tools such as Hadoop, Spark, and MapReduce",
+						"**AI Engineering:** experience with model training and evaluation, and have knowledge of MLOps, LLMs, RAG Architectures and Computer Vision",
 					]
 				},
 				{
@@ -140,10 +145,10 @@ export const DATA = {
 					list: [
 						"**Proactive Learning:** very good at self-learning and excited to try new skills and processes",
 						"**Leadership:** led every group project in university as Team Leader, always achieving the best grades, and also winning an award for one of our projects",
-						"**Teamwork:** educational experience was filled with group projects, where I learned the most about teamwork being the Team Leader",
+						"**Teamwork:** educational experience was filled with group projects, where I learned the most about teamwork by always being the Team Leader",
+						"**Coaching:** able to lead colleagues and teammates to a standardized workflow",
 						"**Precision:** have particular care for quality, tidiness, and completeness in my work",
 						"**Critical Thinking:** analyze problems and ask whys behind decisions to draw thoughtful conclusions",
-						"**Coaching:** able to lead colleagues and teammates to a standardized workflow",
 						"**Problem Solving:** work smart to efficiently analyze problems and find solutions",
 					]
 				},
@@ -173,7 +178,6 @@ export const DATA = {
 						{
 							h2: "Programming Techniques and Technologies",
 							list: [
-								"Code Review",
 								"Unit Testing",
 								"REST API & Swagger",
 								"Relational DBMS",
@@ -233,16 +237,23 @@ export const DATA = {
 							]
 						},
 						{
-							h2: "Notable Services and Libraries",
+							h2: "Libraries and Services - Software Development",
 							list: [
 								"Android SDK",
 								"Jetpack Compose",
-								"Node.js",
 								"Maven",
 								"Gradle",
+								"Node.js",
+							]
+						},						{
+							h2: "Libraries and Services - Data Science",
+							list: [
 								"Hadoop",
 								"Spark",
 								"MapReduce",
+								"Pandas",
+								"NumPy",
+								"Matplotlib",
 							]
 						},
 						{
@@ -392,7 +403,7 @@ export const DATA = {
 					entryKey: "28/03 - 03/04\n(2019)",
 					title: "Change the World Model United Nations (CWMUN) 2019",
 					subtitle: "United Nations Headquarters - New York City, NY, USA",
-					description: "CWMUN is one of the most important multidisciplinary United Nations forums.\nIt takes place at the UN Headquarters in New York and is attended by over 3000 people, including high school and university students, ambassadors, former ministers and prime ministers, sport champions and UN Officials.\nAfter over 60 hours of seminars and individual study in preparation for the event, I had the opportunity to actively discuss the most important global geopolitical topics with the other participants from all over the world.",
+					description: "CWMUN is one of the most important multidisciplinary United Nations forums.\nIt takes place at the UN Headquarters in New York and is attended by over 3000 people, including high school and university students, ambassadors, former ministers and prime ministers, sport champions and UN Officials.\nAfter over 60 hours of seminars and individual study in preparation for the event, I had the opportunity to actively discuss the most important global geopolitical topics with other participants from all over the world.",
 					grade: "",
 					extra: "",
 					media: ["./images/media/cwmun_guinea.jpg", "./images/media/cwmun_general_assembly.jpg"],
@@ -452,8 +463,9 @@ export const DATA = {
 		}
 	],
 	footer: {
+		pageUrl: "Expanded full version of the CV with descriptions, full skills list, and pictures is available at: !!<Full Curriculum Vitae><https://filippochinni.github.io/Curriculum-Vitae/>",
 		signature: "./images/signature.png",
 		law: "I hereby consent to the processing of this CV and the personal data contained within, by anyone who receives this document for the sole purpose of considering my application for employment opportunities, in accordance with Article 6.1(a) of GDPR (EU) 2016/679.",
-		date: `Turin, ${new Date().toISOString().split('T')[0]}`,
+		date: `${new Date().toISOString().split('T')[0]}`,
 	}
 }
