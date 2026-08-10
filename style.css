@@ -702,6 +702,10 @@ footer > .sectionTitleDeco {
 		display: none !important;
 	}
 
+	#CVversion {
+		display: none;
+	}
+
 	#downloadButton {
 		display: none;
 	}
