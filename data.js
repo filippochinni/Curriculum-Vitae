@@ -71,13 +71,21 @@ export const DATA = {
 				{
 					entryKey: "Mar 2025 - Sep 2025",
 					title: "DeepTree | ::Student Consultant::",
-					subtitle: "Milan, Italy (Hybrid)",
+					subtitle: "Milan, Italy - (Hybrid)",
 					description: "I worked as a Student Consultant for DeepTree at the REDI project with the goal of turning DeepTree (the startup's main product) from an intelligent platform used by analysts towards an intelligent AI analyst.",
-					grade: "",
 					extra: "",
 					media: [],
 					icon: "./images/icons/deeptree.jpg"
 				},
+				{
+					entryKey: "Feb 2024 - Jul 2024",
+					title: "CILab - Computation Intelligence Lab | ::Intern::",
+					subtitle: "Bari, Italy - (On-site)",
+					description: "I worked on an real-world Computer Vision problem: Semantic Segmentation with drones for Agricolture. In particular focusing on Hyperparameter Optimization and research & develop Particle Swarm Optimization (PSO) algorithms.",
+					extra: "",
+					media: [],
+					icon: "./images/icons/cilab.jpg"
+				}
 			]
 		},
 		{

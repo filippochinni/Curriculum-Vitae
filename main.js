@@ -57,27 +57,27 @@ function buildSecretActions(data) {
 		locationDisplay.innerHTML = parseText(`${e.target.value} ${data.header.locationInfo}`);
 	});
 
-	const removableDivsMenu = createElement('select', '', 'removableDivsMenu');
-	const removableDivs = {
-		0: document.createElement('option', '', 'removableDivsMenuPlaceholder'),
-		1: document.querySelector("#section-Education .sectionContentDiv").lastChild,
-	};
-	for (const [key, div] of Object.entries(removableDivs)) {
-		const option = document.createElement('option');
-        option.value = key;
-        option.text = div.querySelector('.entryTitleDiv')?.innerHTML;
-        removableDivsMenu.appendChild(option);
-	};
-	const lambdaHandleDBClick = (toHide) => { if (isDBClickEnabled) toHide.style.display = 'none'; };
-	removableDivsMenu.addEventListener('change', (e) => {
-		const selectedDiv = removableDivs[e.target.value];
-		selectedDiv.addEventListener('dblclick', () => { lambdaHandleDBClick(selectedDiv) });
-		for (const key in removableDivs) {
-			if (key !== e.target.value) {
-				removableDivs[key].removeEventListener('dblclick', () => { lambdaHandleDBClick(removableDivs[key]) });
-			}
-		}
-	});
+	// const removableDivsMenu = createElement('select', '', 'removableDivsMenu');
+	// const removableDivs = {
+	// 	0: document.createElement('option', '', 'removableDivsMenuPlaceholder'),
+	// 	1: document.querySelector("#section-Education .sectionContentDiv").lastChild,
+	// };
+	// for (const [key, div] of Object.entries(removableDivs)) {
+	// 	const option = document.createElement('option');
+    //     option.value = key;
+    //     option.text = div.querySelector('.entryTitleDiv')?.innerHTML;
+    //     removableDivsMenu.appendChild(option);
+	// };
+	// const lambdaHandleDBClick = (toHide) => { if (isDBClickEnabled) toHide.style.display = 'none'; };
+	// removableDivsMenu.addEventListener('change', (e) => {
+	// 	const selectedDiv = removableDivs[e.target.value];
+	// 	selectedDiv.addEventListener('dblclick', () => { lambdaHandleDBClick(selectedDiv) });
+	// 	for (const key in removableDivs) {
+	// 		if (key !== e.target.value) {
+	// 			removableDivs[key].removeEventListener('dblclick', () => { lambdaHandleDBClick(removableDivs[key]) });
+	// 		}
+	// 	}
+	// });
 
 	const secretSlimModeSwitch = createElement('input', 'checkbox', 'secretSlimModeSwitch');
 	secretSlimModeSwitch.type = 'checkbox';
@@ -88,16 +88,25 @@ function buildSecretActions(data) {
 		});
 	});
 
-	const secretButton = createElement('button', '', 'secretButton');
-	secretButton.addEventListener('dblclick', () => {
-		alert(`Secret Button!\n` + `Editing is now ${isDBClickEnabled ? "Disabled" : "Enabled"}!`);
-		isDBClickEnabled = !isDBClickEnabled;
-		secretLocationMenu.style.display = (secretLocationMenu.style.display === 'block') ? 'none' : 'block';
-		removableDivsMenu.style.display = (removableDivsMenu.style.display === 'block') ? 'none' : 'block';
-		secretSlimModeSwitch.style.display = (secretSlimModeSwitch.style.display === 'block') ? 'none' : 'block';
+	const secretTableRemovalSwitch = createElement('input', 'checkbox', 'secretTableRemovalSwitch');
+	secretTableRemovalSwitch.type = 'checkbox';
+	secretTableRemovalSwitch.addEventListener('change', () => {
+		const tableEntryDivs = document.querySelectorAll('.tableEntryDiv');
+		tableEntryDivs.forEach(div => {
+			div.classList.toggle('tableEntryRemovable');
+		});
 	});
 
-	return [secretButton, secretLocationMenu, removableDivsMenu, secretSlimModeSwitch];
+	const secretButton = createElement('button', '', 'secretButton');
+	secretButton.addEventListener('dblclick', () => {
+		createToast(`Secret Button!\n` + `Editing is now ${isDBClickEnabled ? "Disabled" : "Enabled"}!`, 'secretButtonToast');
+		isDBClickEnabled = !isDBClickEnabled;
+		secretLocationMenu.style.display = (secretLocationMenu.style.display === 'block') ? 'none' : 'block';
+		secretSlimModeSwitch.style.display = (secretSlimModeSwitch.style.display === 'block') ? 'none' : 'block';
+		secretTableRemovalSwitch.style.display = (secretTableRemovalSwitch.style.display === 'block') ? 'none' : 'block';
+	});
+
+	return [secretButton, secretLocationMenu, secretSlimModeSwitch, secretTableRemovalSwitch];
 }
 
 function sortSections(contentDiv) {
@@ -132,18 +141,35 @@ function buildHeader(headerData) {
 	mainHeaderDiv.appendChild(headerInfoDiv);
 	headerInfoDiv.appendChild(headerNameDiv);
 
-	profilePicDiv.children[0].innerHTML = `<img src="${headerData.picture}" alt="Profile Picture">`;
+	profilePicDiv.children[0].innerHTML = parsePic(headerData.picture);
 	headerNameDiv.innerHTML = `${parseText(headerData.fullName)}`;
 
 	headerInfoDiv.appendChild(buildHeaderTableLayout([
 		{ icon: "&#x1F4C5", info: "Birth Date:", content: headerData.birthDate },
 		{ icon: "&#x1F310", info: "Nationality:",  content: headerData.nationality },
-		{ icon: "&#x1F30D", info: "Location:", content: `<span id="locationDiv">${headerData.location} ${headerData.locationInfo}</span>` },
+		{ icon: "&#x1F30D", info: "Location:", content: wrapWithId(`${headerData.location} ${headerData.locationInfo}`, 'locationDiv') },
 		{ icon: "&#128231", info: "Email:", content: headerData.email },
 		{ icon: "&#128188", info: "Other:", content: headerData.other }
 	]));
 
 	return mHeader;
+}
+
+function buildHeaderTableLayout(rows) {
+	const tableLayout = createElement('div', 'tableLayout');
+	const listLayout = createElement('div', 'tableLayoutList');
+
+	for (const row of rows) {
+		const rowLayout = createElement('div', 'tableLayoutRow', `row-${row['info'].replace(':', '')}`);
+		for (const elem in row) {
+			const elemDiv = createElement('div');
+			elemDiv.innerHTML = parseText(row[elem]);
+			rowLayout.appendChild(elemDiv);
+		}
+		listLayout.appendChild(rowLayout);
+	}
+	tableLayout.appendChild(listLayout);
+	return tableLayout;
 }
 
 function buildFooter(footerData) {
@@ -155,7 +181,7 @@ function buildFooter(footerData) {
 	const lawDiv = createElement('div', 'footerElem', 'lawDiv');
 	const dateDiv = createElement('div', 'footerElem', 'dateDiv');
 
-	signatureDiv.innerHTML = `<img src="${footerData.signature}" alt="Signature">`;
+	signatureDiv.innerHTML = parsePic(footerData.signature);
 
 	fullCVPageUrlDiv.innerHTML = parseText(footerData.pageUrl);
 
@@ -174,23 +200,6 @@ function buildFooter(footerData) {
 	return mFooter;
 }
 
-function buildHeaderTableLayout(rows) {
-	const tableLayout = createElement('div', 'tableLayout');
-	const listLayout = createElement('div', 'tableLayoutList');
-
-	for (const row of rows) {
-		const rowLayout = createElement('div', 'tableLayoutRow');
-		for (const elem in row) {
-			const elemDiv = createElement('div');
-			elemDiv.innerHTML = parseText(row[elem]);
-			rowLayout.appendChild(elemDiv);
-		}
-		listLayout.appendChild(rowLayout);
-	}
-	tableLayout.appendChild(listLayout);
-	return tableLayout;
-}
-
 function buildSection(sectionDiv, sectionData) {
 	const sectionTitleDiv = createElement('div', 'sectionTitleDiv');
 	const sectionTitle = createElement('div', 'sectionTitle');
@@ -203,10 +212,7 @@ function buildSection(sectionDiv, sectionData) {
 	sectionDiv.appendChild(sectionTitleDiv);
 	sectionDiv.appendChild(sectionContentDiv);
 
-	sectionTitleDiv.addEventListener('click', () => {
-		const isExpanded = getComputedStyle(sectionContentDiv).display !== 'none';
-		sectionContentDiv.style.display = isExpanded ? 'none' : 'flex';
-	});
+	addCollapseAction(sectionDiv, 'flex');
 
 	switch (sectionData.type) {
 		case "text-only":
@@ -215,14 +221,14 @@ function buildSection(sectionDiv, sectionData) {
 		case "generic-table":
 			buildSectionTable(sectionContentDiv, sectionData.content);
 			break;
+		case "entries-list":
+			buildSectionEntries(sectionContentDiv, sectionData.content);
+			break;
 		case "bullet-lists":
 			buildSectionBullet(sectionContentDiv, sectionData.content);
 			break;
 		case "nested-lists":
 			buildSectionNested(sectionContentDiv, sectionData.content);
-			break;
-		case "entries-list":
-			buildSectionEntries(sectionContentDiv, sectionData.content);
 			break;
 		default:
 			console.error(`Unknown section type: ${sectionData.type}`);
@@ -252,22 +258,7 @@ function buildSectionTable(sectionContentDiv, sectionContent) {
 		tableIconDiv.innerHTML = entry?.icon ? parseIcon(entry.icon) : "";
 		buildEntryDiv(entryDiv, entry);
 
-		tableIconDiv.addEventListener('click', () => {
-			if (entryDiv.classList.contains('collapsed')) {
-				entryDiv.classList.remove('collapsed');
-				for (const child of entryDiv.children) {
-					child.style.display = 'block';
-				}
-				tableEntryDiv.style.alignItems = 'flex-start';
-			} else {
-				entryDiv.classList.add('collapsed');
-				for (const child of entryDiv.children) {
-					child.style.display = 'none';
-				}
-				tableEntryDiv.style.alignItems = 'center';
-				entryDiv.firstChild.style.display = 'block';
-			}
-		});
+		addCollapseAction(tableEntryDiv, 'block', entryDiv);
 	}
 	return sectionContentDiv;
 }
@@ -279,20 +270,7 @@ function buildSectionEntries(sectionContentDiv, sectionContent) {
 		sectionContentDiv.appendChild(entryDiv);
 		buildEntryDiv(entryDiv, entry);
 
-		entryDiv.firstChild.addEventListener('click', () => {
-			if (entryDiv.classList.contains('collapsed')) {
-				entryDiv.classList.remove('collapsed');
-				for (const child of entryDiv.children) {
-					child.style.display = 'block';
-				}
-			} else {
-				entryDiv.classList.add('collapsed');
-				for (const child of entryDiv.children) {
-					child.style.display = 'none';
-				}
-				entryDiv.firstChild.style.display = 'block';
-			}
-		});
+		addCollapseAction(entryDiv);
 	}
 	return sectionContentDiv;
 }
@@ -310,26 +288,13 @@ function buildSectionBullet(sectionContentDiv, sectionContent) {
 		entryDiv.appendChild(entryTitleDiv);
 		entryDiv.appendChild(h1ListDiv);
 
-		entryDiv.firstChild.addEventListener('click', () => {
-			if (entryDiv.classList.contains('collapsed')) {
-				entryDiv.classList.remove('collapsed');
-				for (const child of entryDiv.children) {
-					child.style.display = 'flex';
-				}
-			} else {
-				entryDiv.classList.add('collapsed');
-				for (const child of entryDiv.children) {
-					child.style.display = 'none';
-				}
-				entryDiv.firstChild.style.display = 'block';
-			}
-		});
+		addCollapseAction(entryDiv, 'flex');
 
 		h1ListDiv.appendChild(innerEntryBulletList);
 		for (const innerEntry of entry.list) {
 			const innerEntryDiv = createElement('li', 'innerEntryDiv');
 			innerEntryDiv.innerHTML = parseText(innerEntry);
-			innerEntryDiv.addEventListener('dblclick', () => { if (isDBClickEnabled) innerEntryDiv.style.display = 'none'; });
+			addDBClickDeleteAction(innerEntryDiv);
 			innerEntryBulletList.appendChild(innerEntryDiv);
 		}
 	}
@@ -348,27 +313,14 @@ function buildSectionNested(sectionContentDiv, sectionContent) {
 		entryDiv.appendChild(entryTitleDiv);
 		entryDiv.appendChild(h1ListDiv);
 
-		entryDiv.firstChild.addEventListener('click', () => {
-			if (entryDiv.classList.contains('collapsed')) {
-				entryDiv.classList.remove('collapsed');
-				for (const child of entryDiv.children) {
-					child.style.display = 'flex';
-				}
-			} else {
-				entryDiv.classList.add('collapsed');
-				for (const child of entryDiv.children) {
-					child.style.display = 'none';
-				}
-				entryDiv.firstChild.style.display = 'block';
-			}
-		});
+		addCollapseAction(entryDiv, 'flex');
 
 		if (!entry.list[0]?.h2) {
 			h1ListDiv.appendChild(innerEntryDivListH1);
 			for (const innerEntry of entry.list) {
 				const innerEntryDiv = createElement('div', 'innerEntryDiv');
 				innerEntryDiv.innerHTML = parseText(innerEntry);
-				innerEntryDiv.addEventListener('dblclick', () => { if (isDBClickEnabled) innerEntryDiv.style.display = 'none'; });
+				addDBClickDeleteAction(innerEntryDiv);
 				innerEntryDiv.innerHTML += "&ensp;|&ensp;";
 				innerEntryDivListH1.appendChild(innerEntryDiv);
 			}
@@ -386,25 +338,12 @@ function buildSectionNested(sectionContentDiv, sectionContent) {
 			h2ListDiv.appendChild(entrySubtitleDiv);
 			h2ListDiv.appendChild(innerEntryDivListH2);
 
-			h2ListDiv.firstChild.addEventListener('click', () => {
-				if (h2ListDiv.classList.contains('collapsed')) {
-					h2ListDiv.classList.remove('collapsed');
-					for (const child of h2ListDiv.children) {
-						child.style.display = 'flex';
-					}
-				} else {
-					h2ListDiv.classList.add('collapsed');
-					for (const child of h2ListDiv.children) {
-						child.style.display = 'none';
-					}
-					h2ListDiv.firstChild.style.display = 'block';
-				}
-			});
+			addCollapseAction(h2ListDiv, 'flex');
 
 			for (const innerEntry of entry.list[i].list) {
 				const innerEntryDiv = createElement('div', 'innerEntryDiv');
 				innerEntryDiv.innerHTML = parseText(innerEntry);
-				innerEntryDiv.addEventListener('dblclick', () => { if (isDBClickEnabled) innerEntryDiv.style.display = 'none'; });
+				addDBClickDeleteAction(innerEntryDiv);
 				innerEntryDiv.innerHTML += "&ensp;|&ensp;";
 				innerEntryDivListH2.appendChild(innerEntryDiv);
 			}
@@ -437,13 +376,42 @@ function buildEntryDiv(entryDiv, entryContent) {
 	if (entryContent?.media)	entryDiv.appendChild(entryMediaDiv);
 	entryDiv.appendChild(createElement('div', 'marginDiv'));
 
-	entryDescriptionDiv.addEventListener('dblclick', () => { if (isDBClickEnabled) entryDescriptionDiv.style.display = 'none'; });
-	entryGradeDiv.addEventListener('dblclick', () => { if (isDBClickEnabled) entryGradeDiv.style.display = 'none'; });
-	entryExtraDiv.addEventListener('dblclick', () => { if (isDBClickEnabled) entryExtraDiv.style.display = 'none'; });
-	entryMediaDiv.addEventListener('dblclick', () => { if (isDBClickEnabled) entryMediaDiv.style.display = 'none'; });
+	addDBClickDeleteAction(entryDescriptionDiv);
+	addDBClickDeleteAction(entryGradeDiv);
+	addDBClickDeleteAction(entryExtraDiv);
+	addDBClickDeleteAction(entryMediaDiv);
 
 	return entryDiv;
 }
+
+function addCollapseAction(div, childDisplay = 'block', targetDiv = null) {
+	if (targetDiv == undefined) {
+		targetDiv = div;
+	}
+	div.firstChild.addEventListener('click', () => {
+		if (targetDiv.classList.contains('collapsed')) {
+			targetDiv.classList.remove('collapsed');
+			for (const child of targetDiv.children) {
+				child.style.display = childDisplay;
+			}
+		} else {
+			targetDiv.classList.add('collapsed');
+			for (const child of targetDiv.children) {
+				child.style.display = 'none';
+			}
+			targetDiv.firstChild.style.display = 'block';
+		}
+	});
+}
+
+function addDBClickDeleteAction(div) {
+	div.addEventListener('dblclick', () => {
+		if (isDBClickEnabled) {
+			div.style.display = 'none'
+		}
+	});
+};
+
 
 function createElement(tagName, className, id) {
 	let createdElement = document.createElement(tagName);
@@ -455,6 +423,16 @@ function createElement(tagName, className, id) {
 		createdElement.setAttribute('id', id);
 	}
 	return createdElement;
+}
+
+function createToast(content, id) {
+	const toast = createElement('div', 'toast', id);
+		toast.textContent = content;
+		document.body.appendChild(toast);
+		setTimeout(() => {
+			toast.style.opacity = '0';
+			setTimeout(() => toast.remove(), 500);
+		}, 2000);
 }
 
 function parseText(content) {
@@ -501,3 +479,14 @@ function parseIcon(content) {
 	return html;
 }
 
+function parsePic(content) {
+	if (content == undefined || !content || content.length === 0) {
+		return "";
+	}
+	const html = `<img src="${content}" alt="Picture">`;
+	return html;
+}
+
+function wrapWithId(content, id) {
+	return `<span id="${id}">${content}</span>`;
+}

@@ -7,8 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.5.0] - 2026-08-10
+
 ### Added
 
+- Added CILab Internship experience
+- Added secret toggle to enable/disable removal of table entries
+- Added labels to secret switches
+- Removed secret removable divs menu
+- Code Refactoring
 - Bug Fixes
 
 ## [1.4.0] - 2026-08-09
@@ -58,7 +65,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [START of the PROJECT]
 - Initial project setup and configuration.
 
-[unreleased]: https://github.com/filippochinni/Curriculum-Vitae/compare/v1.4.0...HEAD
+[unreleased]: https://github.com/filippochinni/Curriculum-Vitae/compare/v1.5.0...HEAD
+[1.5.0]: https://github.com/filippochinni/Curriculum-Vitae/compare/v1.4.0...v1.5.0
 [1.4.0]: https://github.com/filippochinni/Curriculum-Vitae/compare/v1.3.0...v1.4.0
 [1.3.0]: https://github.com/filippochinni/Curriculum-Vitae/compare/v1.2.0...v1.3.0
 [1.2.0]: https://github.com/filippochinni/Curriculum-Vitae/compare/v1.1.0...v1.2.0
