@@ -20,6 +20,9 @@ const SECTION_ORDER = [
 main();
 
 function main() {
+	const mVersionDiv = document.getElementById('CVversion');
+	mVersionDiv.innerHTML = DATA.version;
+
 	const mPageListDiv = document.getElementById('pageListDiv');
 
 	const mPageDiv = document.getElementById('page');

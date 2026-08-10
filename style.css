@@ -5,6 +5,12 @@ body {
 	color: #111111;
 }
 
+#CVversion {
+	position: absolute;
+	top: 30px;
+	left: 50px;
+}
+
 #pageListDiv {
 	display: flex;
 	flex-direction: column;
@@ -552,8 +558,8 @@ footer > .sectionTitleDeco {
 	top: 20px;
 	right: 20px;
 
-	width: 100px;
-	height: 100px;
+	width: 80px;
+	height: 80px;
 
 	background-color: dodgerblue;
 	color: white;

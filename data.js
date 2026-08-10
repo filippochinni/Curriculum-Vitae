@@ -1,5 +1,5 @@
 export const DATA = {
-	version: "v1.3.5",
+	version: "v1.5.1",
 	header: {
 		picture: "./images/picture.png",
 		fullName: "Filippo Chinni Carella",
