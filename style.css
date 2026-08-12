@@ -640,6 +640,23 @@ footer > .sectionTitleDeco {
 	font-size: 0.7rem;
 }
 
+#secretFullURLSwitch {
+	position: absolute;
+	top: 140px;
+	left: 20px;
+	display: none;
+	z-index: 1000;
+	width: 20px;
+	height: 20px;
+}
+
+#secretFullURLSwitch::after {
+	content: "Put Full CV URL at bottom in PDF";
+	white-space: nowrap;
+	margin-left: 25px;
+	font-size: 0.7rem;
+}
+
 #secretButtonToast {
 	position: fixed;
 	left: 50%;
@@ -728,6 +745,10 @@ footer > .sectionTitleDeco {
 
 	#fullCVPageUrlDiv {
 		display: block;
+	}
+
+	#fullCVPageUrlDiv.hide {
+		display: none;
 	}
 
 	.sectionTitleDiv::after {

@@ -1,11 +1,11 @@
 export const DATA = {
-	version: "v1.5.2",
+	version: "v1.5.3",
 	header: {
 		picture: "./images/picture.png",
 		fullName: "Filippo Chinni Carella",
 		nationality: "Italian",
 		birthDate: "27/06/2002",
-		location: "Bari, Italy",
+		location: "Milan, Italy",
 		locations: ["Bari, Italy", "Turin, Italy", "Milan, Italy", "Bologna, Italy", "Rome, Italy", "Lugano, Switzerland"],
 		locationInfo: "**(Willing to relocate)**",
 		email: "!!<filippochinni02@gmail.com><filippochinni02@gmail.com>",

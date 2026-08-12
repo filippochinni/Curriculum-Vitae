@@ -40,10 +40,10 @@ function main() {
 		buildSection(mSectionDiv, sectionData);
 		sortSections(mContentDiv);
 	}
+	mContentDiv.appendChild(mFooter);
+
 	const secretElements = buildSecretActions(DATA);
 	secretElements.forEach(elem => mPageDiv.appendChild(elem));
-
-	mContentDiv.appendChild(mFooter);
 }
 
 function buildSecretActions(data) {
@@ -59,28 +59,6 @@ function buildSecretActions(data) {
 		const locationDisplay = document.getElementById('locationDiv');
 		locationDisplay.innerHTML = parseText(`${e.target.value} ${data.header.locationInfo}`);
 	});
-
-	// const removableDivsMenu = createElement('select', '', 'removableDivsMenu');
-	// const removableDivs = {
-	// 	0: document.createElement('option', '', 'removableDivsMenuPlaceholder'),
-	// 	1: document.querySelector("#section-Education .sectionContentDiv").lastChild,
-	// };
-	// for (const [key, div] of Object.entries(removableDivs)) {
-	// 	const option = document.createElement('option');
-    //     option.value = key;
-    //     option.text = div.querySelector('.entryTitleDiv')?.innerHTML;
-    //     removableDivsMenu.appendChild(option);
-	// };
-	// const lambdaHandleDBClick = (toHide) => { if (isDBClickEnabled) toHide.style.display = 'none'; };
-	// removableDivsMenu.addEventListener('change', (e) => {
-	// 	const selectedDiv = removableDivs[e.target.value];
-	// 	selectedDiv.addEventListener('dblclick', () => { lambdaHandleDBClick(selectedDiv) });
-	// 	for (const key in removableDivs) {
-	// 		if (key !== e.target.value) {
-	// 			removableDivs[key].removeEventListener('dblclick', () => { lambdaHandleDBClick(removableDivs[key]) });
-	// 		}
-	// 	}
-	// });
 
 	const secretSlimModeSwitch = createElement('input', 'checkbox', 'secretSlimModeSwitch');
 	secretSlimModeSwitch.type = 'checkbox';
@@ -100,6 +78,14 @@ function buildSecretActions(data) {
 		});
 	});
 
+	const secretFullURLSwitch = createElement('input', 'checkbox', 'secretFullURLSwitch');
+	secretFullURLSwitch.type = 'checkbox';
+	secretFullURLSwitch.checked = true;
+	secretFullURLSwitch.addEventListener('change', () => {
+		const fullCVPageUrlDiv = document.getElementById('fullCVPageUrlDiv');
+		fullCVPageUrlDiv.classList.toggle('hide')
+	});
+
 	const secretButton = createElement('button', '', 'secretButton');
 	secretButton.addEventListener('dblclick', () => {
 		createToast(`Secret Button!\n` + `Editing is now ${isDBClickEnabled ? "Disabled" : "Enabled"}!`, 'secretButtonToast');
@@ -107,9 +93,10 @@ function buildSecretActions(data) {
 		secretLocationMenu.style.display = (secretLocationMenu.style.display === 'block') ? 'none' : 'block';
 		secretSlimModeSwitch.style.display = (secretSlimModeSwitch.style.display === 'block') ? 'none' : 'block';
 		secretTableRemovalSwitch.style.display = (secretTableRemovalSwitch.style.display === 'block') ? 'none' : 'block';
+		secretFullURLSwitch.style.display = (secretFullURLSwitch.style.display === 'block') ? 'none' : 'block';
 	});
 
-	return [secretButton, secretLocationMenu, secretSlimModeSwitch, secretTableRemovalSwitch];
+	return [secretButton, secretLocationMenu, secretSlimModeSwitch, secretTableRemovalSwitch, secretFullURLSwitch];
 }
 
 function sortSections(contentDiv) {
