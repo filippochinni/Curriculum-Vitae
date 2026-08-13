@@ -5,8 +5,8 @@ let isDBClickEnabled = false;
 
 const SECTION_ORDER = [
 	"Presentation",
-	"Education",
 	"Work Experience",
+	"Education",
 	"Portfolio",
 	"Skills",
 	"Hard Skills List",

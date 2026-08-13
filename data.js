@@ -1,5 +1,5 @@
 export const DATA = {
-	version: "v1.5.4",
+	version: "v1.5.5",
 	header: {
 		picture: "./images/picture.png",
 		fullName: "Filippo Chinni Carella",
@@ -9,7 +9,7 @@ export const DATA = {
 		locations: ["Bari, Italy", "Turin, Italy", "Milan, Italy", "Bologna, Italy", "Rome, Italy", "Lugano, Switzerland"],
 		locationInfo: "**(Willing to relocate)**",
 		email: "!!<filippochinni02@gmail.com><filippochinni02@gmail.com>",
-		other: "!!<LinkedIn><https://www.linkedin.com/in/filippo-chinni-carella> | !!<GitHub><https://github.com/filippochinni>"
+		other: "!!<LinkedIn><https://www.linkedin.com/in/filippo-chinni-carella>",
 	},
 	sections: [
 		{
@@ -72,7 +72,7 @@ export const DATA = {
 					entryKey: "Mar 2025 - Sep 2025",
 					title: "DeepTree | ::Student Consultant::",
 					subtitle: "Milan, Italy - (Hybrid)",
-					description: "I worked as a Student Consultant for DeepTree at the REDI project with the goal of turning DeepTree (the startup's main product) from an intelligent platform used by M&A analysts towards an intelligent AI M&A analyst.",
+					description: "Worked as a Student Consultant for DeepTree at the REDI project with the goal of turning DeepTree (the startup's main product) from an intelligent M&A platform used by analysts towards an intelligent M&A AI analyst.",
 					extra: "",
 					media: [],
 					icon: "./images/icons/deeptree.jpg"
@@ -81,7 +81,7 @@ export const DATA = {
 					entryKey: "Feb 2024 - Jul 2024",
 					title: "CILab - Computation Intelligence Lab | ::Intern::",
 					subtitle: "Bari, Italy - (On-site)",
-					description: "I worked on an real-world Computer Vision problem: Semantic Segmentation with drones for Agricolture. In particular focusing on Hyperparameter Optimization and research & develop Particle Swarm Optimization (PSO) algorithms.",
+					description: "Worked on a real-world Computer Vision problem: Semantic Segmentation with drones for Agricolture. In particular focusing on Hyperparameter Optimization and research & develop Particle Swarm Optimization (PSO) algorithms.",
 					extra: "",
 					media: [],
 					icon: "./images/icons/cilab.jpg"
@@ -120,30 +120,30 @@ export const DATA = {
 				{
 					h1: "Software Developing",
 					list: [
-						"**Software Engineering:** developed multiple full-cycle software projects of all kinds adopting the best practices from conception to deployment",
+						"**Software Engineering:** designed and developed multiple full-cycle software projects of all kinds adopting the best practices from conception to deployment",
 						"**Software Design:** designed informal and UML diagrams and schemas on all levels of abstraction",
 						"**Software Documentation:** written countless documentation documents for many projects, including Requirements Engineering, Software Design, UI/UX Design, Software Testing, and more",
-						"**Software Testing & Debugging:** can execute Automated Testing and successfully find bugs",
+						"**Testing & Debugging:** can execute Automated Testing (e.g., Unit Testing) and successfully find bugs",
+						"**Database:** designed both Relational (SQL) and NoSQL Databases. Trained on complex queries",
 						"**Project Management:** can make estimations and plans; experienced with Agile methodologies (SCRUM) and ALM tools (GitHub, GitLab, Redmine, Jira)",
 						"**Version Control:** experienced with versioning tools (Git, SVN) and best practices (GitFlow)",
-						"**DevOps**: have knowledge of CI/CD pipelines and QA tools (SonarCloud, Fortify, ...) and processes"
-
+						"**DevOps**: have knowledge of CI/CD pipelines and QA tools (SonarCloud, Fortify, ...). Worked with REST APIs. Deployed an HomeLab server for personal use (using Linux, Docker, Nginx, ...)",
 					]
 				},
 				{
 					h1: "Artificial Intelligence and Data Science",
 					list: [
 						"**Machine Learning:** attended multiple courses on the topic, and based my Bachelor's Thesis on a Machine/Deep Learning theme, Hyperparameter Optimization",
-						"**Data Analysis:** attended a specialized extra course on Intelligent Data Analysis",
+						"**Data Engineering:** attended a specialized extra course on Intelligent Data Analysis. Learned Data Preprocessing and Feature Engineering",
 						"**Big Data Processing:** experience with tools such as Hadoop, Spark, and MapReduce",
-						"**AI Engineering:** experience with model training and evaluation, and have knowledge of MLOps, LLMs, RAG Architectures and Computer Vision",
+						"**AI Engineering:** experience with model training and evaluation, and have knowledge of MLOps, LLMs, RAG Architectures and Computer Vision. Used Azure ML for cloud computing",
 					]
 				},
 				{
 					h1: "Programming Languages (Best)",
 					list: [
-						"**Java:** built several projects including 2 Android Apps",
-						"**Python:** developed numerous personal utility projects, and a Machine Learning project for the experiments of my Bachelor's Thesis",
+						"**Java | Kotlin:** built several projects including 2 Android Apps",
+						"**Python:** developed numerous personal utility projects, and a PyTorch Neural Network model for the experiments of my Bachelor's Thesis",
 						"**JavaScript:** deployed various small web projects, including fan websites and the builder of this CV",
 						"**C:** had extensive practice during educational courses; have experience in embedded programming and have built a Pacman game on a SoC",
 					]
@@ -151,9 +151,9 @@ export const DATA = {
 				{
 					h1: "Soft Skills",
 					list: [
-						"**Proactive Learning:** very good at self-learning and excited to try new skills and processes",
+						"**Proactive Learning:** eager self-learner and excited to try new skills and processes",
 						"**Leadership:** led every group project in university as Team Leader, always achieving the best grades, and also winning an award for one of our projects",
-						"**Teamwork:** educational experience was filled with group projects, where I learned the most about teamwork by always being the Team Leader",
+						"**Teamwork:** education was filled with group projects, where I learned the most about collaboration",
 						"**Coaching:** able to lead colleagues and teammates to a standardized workflow",
 						"**Precision:** have particular care for quality, tidiness, and completeness in my work",
 						"**Critical Thinking:** analyze problems and ask whys behind decisions to draw thoughtful conclusions",
@@ -263,6 +263,7 @@ export const DATA = {
 								"NumPy",
 								"Matplotlib",
 								"Scikit-learn",
+								"PyTorch",
 							]
 						},
 						{
