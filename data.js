@@ -1,5 +1,5 @@
 export const DATA = {
-	version: "v1.5.3",
+	version: "v1.5.4",
 	header: {
 		picture: "./images/picture.png",
 		fullName: "Filippo Chinni Carella",
@@ -15,7 +15,7 @@ export const DATA = {
 		{
 			sectionTitle: "Presentation",
 			type: "text-only",
-			content: "Graduate Student in Computer Science. Software Engineer and Developer.\n\
+			content: "Graduate Student in Computer Science. Software & AI Engineer and Data Scientist.\n\
 			Specialized in Software Design and Documentation. Educated and experienced in AI and Data Engineering."
 		},
 		{
@@ -72,7 +72,7 @@ export const DATA = {
 					entryKey: "Mar 2025 - Sep 2025",
 					title: "DeepTree | ::Student Consultant::",
 					subtitle: "Milan, Italy - (Hybrid)",
-					description: "I worked as a Student Consultant for DeepTree at the REDI project with the goal of turning DeepTree (the startup's main product) from an intelligent platform used by analysts towards an intelligent AI analyst.",
+					description: "I worked as a Student Consultant for DeepTree at the REDI project with the goal of turning DeepTree (the startup's main product) from an intelligent platform used by M&A analysts towards an intelligent AI M&A analyst.",
 					extra: "",
 					media: [],
 					icon: "./images/icons/deeptree.jpg"

@@ -743,6 +743,10 @@ footer > .sectionTitleDeco {
 		display: none !important;
 	}
 
+	#secretFullURLSwitch {
+		display: none !important;
+	}
+
 	#fullCVPageUrlDiv {
 		display: block;
 	}
