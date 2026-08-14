@@ -1,5 +1,5 @@
 export const DATA = {
-	version: "v1.5.5",
+	version: "v1.5.6",
 	header: {
 		picture: "./images/picture.png",
 		fullName: "Filippo Chinni Carella",
@@ -45,7 +45,7 @@ export const DATA = {
 				{
 					entryKey: "Oct 2021 - Jul 2024",
 					title: "::B.sc Degree::: Computer Science and Technologies for Software Production",
-					subtitle: "University of Bari \"Aldo Moro\", Bari",
+					subtitle: "Università degli Studi di Bari, Bari",
 					description: "",
 					grade: "Grade 110/110 Cum Laude and Special Mention",
 					extra: "::Bachelor's Thesis::: \"__Hyperparameter Optimization: Techniques, Particle Swarm Optimization, with Application in Drone Vision__\"",
@@ -142,7 +142,7 @@ export const DATA = {
 				{
 					h1: "Programming Languages (Best)",
 					list: [
-						"**Java | Kotlin:** built several projects including 2 Android Apps",
+						"**Java | Kotlin:** built 2 Android apps using both legacy Views and Jetpack Compose",
 						"**Python:** developed numerous personal utility projects, and a PyTorch Neural Network model for the experiments of my Bachelor's Thesis",
 						"**JavaScript:** deployed various small web projects, including fan websites and the builder of this CV",
 						"**C:** had extensive practice during educational courses; have experience in embedded programming and have built a Pacman game on a SoC",
@@ -400,7 +400,7 @@ export const DATA = {
 					description: "",
 					grade: "Score 213 (Grade B) (Equivalent to **IELTS 9**)",
 					extra: "",
-					media: ["./images/media/c2_certificate.png", "./images/media/c2_statement_result.png"],
+					media: [],
 					icon: "./images/icons/english.png"
 				}
 			]
@@ -465,9 +465,45 @@ export const DATA = {
 				{
 					title: "\"Premio Caso di Studio\" (\"Project Award\")",
 					subtitle: "For having developed an excellent project in Software Engineering (2022/2023)",
-					description: "Award granted to the team that developed the best Project of the academic year\n[Bari, 7 December 2023 - University of Bari \"Aldo Moro\" - Prof. Danilo Caivano]",
+					description: "Award granted to the team that developed the best Project of the academic year\n[Bari, 7 December 2023 - Università degli Studi di Bari - Prof. Danilo Caivano]",
 					extra: "",
 					media: ["./images/media/premio_caso_di_studio.png", "./images/media/premio_caso_di_studio_pic.jpg"]
+				}
+			]
+		},
+		{
+			sectionTitle: "Certifications and Certified Courses",
+			type: "generic-table",
+			content: [
+				{
+					entryKey: "Aug 2026",
+					title: "Google Learning Badge - Android Development",
+					subtitle: "Google Developer Program",
+					description: "Combined 100h of learning pathways on Android Development",
+					grade: "",
+					extra: "!!<Credential Link><https://developers.google.com/profile/badges/profile/created-profile?u=107089590517794247041>",
+					media: [],
+					icon: "./images/icons/google_developer.png"
+				},
+				{
+					entryKey: "Jul 2024",
+					title: "Cambridge Certificate of Proficiency in English (CPE) (C2)",
+					subtitle: "Cambridge English",
+					description: "",
+					grade: "Score 213 (Grade B) (Equivalent to **IELTS 9**)",
+					extra: "!!<Credential Link><https://www.cambridgeenglish.org/exams-and-tests/qualifications/proficiency/>",
+					media: ["./images/media/c2_certificate.png", "./images/media/c2_statement_result.png"],
+					icon: "./images/icons/cambridge.jpg"
+				},
+				{
+					entryKey: "Jun 2023",
+					title: "Coding for Intelligent Data Analysis",
+					subtitle: "Università degli Studi di Bari",
+					description: "",
+					grade: "",
+					extra: "!!<Credential Link><https://openbadges.bestr.it/public/assertions/14vOSACGRp2l717PISaj_A>",
+					media: ["./images/media/badge_c4ida.png"],
+					icon: "./images/icons/uniba.png"
 				}
 			]
 		}

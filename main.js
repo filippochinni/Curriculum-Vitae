@@ -13,6 +13,7 @@ const SECTION_ORDER = [
 	"Awards",
 	"Projects and Competitions",
 	"Languages",
+	"Certifications and Certified Courses",
 	"Studies and Courses List",
 	"Competitive Sports",
 ];
