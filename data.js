@@ -1,5 +1,5 @@
 export const DATA = {
-	version: "v1.5.6",
+	version: "v1.5.6b",
 	header: {
 		picture: "./images/picture.png",
 		fullName: "Filippo Chinni Carella",
@@ -68,6 +68,15 @@ export const DATA = {
 			sectionTitle: "Work Experience",
 			type: "generic-table",
 			content: [
+				{
+					entryKey: "Jan 2026 - Present",
+					title: "AUTO1 Group | ::Junior Data Scientist::",
+					subtitle: "Milan, Italy - (Hybrid)",
+					description: "Developed and deployed Machine Learning models to support vehicle selling optimization and demand management. Integrated data analytics into processes such as demand forecasting, dynamic pricing, finance risk prediction.",
+					extra: "",
+					media: [],
+					icon: "./images/icons/auto1.jpg"
+				},
 				{
 					entryKey: "Mar 2025 - Sep 2025",
 					title: "DeepTree | ::Student Consultant::",
