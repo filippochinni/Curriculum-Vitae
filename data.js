@@ -1,5 +1,5 @@
 export const DATA = {
-	version: "v1.6.0",
+	version: "v1.6.2",
 	header: {
 		picture: "./images/picture.png",
 		fullName: "Filippo Chinni Carella",
@@ -33,11 +33,11 @@ export const DATA = {
 					icon: "./images/icons/alta_scuola_politecnica.jpg"
 				},
 				{
-					entryKey: "Sep 2024 - Present",
+					entryKey: "Sep 2024 - Sep 2026",
 					title: "::M.sc Degree::: Computer Engineering (Curriculum: Artificial Intelligence and Data Analytics)",
 					subtitle: "Politecnico di Torino, Turin",
 					description: "",
-					grade: "",
+					grade: "Grade: 110/110",
 					extra: "",
 					media: [],
 					icon: "./images/icons/politecnico_torino.jpg"
@@ -49,7 +49,7 @@ export const DATA = {
 					description: "",
 					grade: "Grade: 110/110 Cum Laude and Special Mention",
 					extra: "",
-					media: ["./images/media/bachelor_degree_certificate.jpeg"],
+					media: [/* "./images/media/bachelor_degree_certificate.jpeg" */],
 					icon: "./images/icons/uniba.png"
 				},
 				{
