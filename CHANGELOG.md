@@ -9,6 +9,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+
+## [1.6.0] - 2026-10-11
+
+### Added
+
+- Added "Publications" section
+- Minor Fixes, Additions and Improvements
+- Added Minor Subsections
+
+## [1.5.6] - 2026-08-14
+
+### Added
+
 - Added "Certifications and Certified Courses" section
 - Rephrasing on multiple entries
 - Added secret switch to enable/disable the display of the full CV URL
@@ -73,7 +86,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [START of the PROJECT]
 - Initial project setup and configuration.
 
-[unreleased]: https://github.com/filippochinni/Curriculum-Vitae/compare/v1.5.0...HEAD
+[unreleased]: https://github.com/filippochinni/Curriculum-Vitae/compare/v1.6.0...HEAD
+[1.6.0]: https://github.com/filippochinni/Curriculum-Vitae/compare/v1.5.0...v1.6.0
 [1.5.0]: https://github.com/filippochinni/Curriculum-Vitae/compare/v1.4.0...v1.5.0
 [1.4.0]: https://github.com/filippochinni/Curriculum-Vitae/compare/v1.3.0...v1.4.0
 [1.3.0]: https://github.com/filippochinni/Curriculum-Vitae/compare/v1.2.0...v1.3.0
