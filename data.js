@@ -1,12 +1,12 @@
 export const DATA = {
-	version: "v1.5.6",
+	version: "v1.6.0",
 	header: {
 		picture: "./images/picture.png",
 		fullName: "Filippo Chinni Carella",
 		nationality: "Italian",
 		birthDate: "27/06/2002",
 		location: "Milan, Italy",
-		locations: ["Bari, Italy", "Turin, Italy", "Milan, Italy", "Bologna, Italy", "Rome, Italy", "Lugano, Switzerland"],
+		locations: ["Bari, Italy", "Turin, Italy", "Milan, Italy", "Bologna, Italy", "Rome, Italy"],
 		locationInfo: "**(Willing to relocate)**",
 		email: "!!<filippochinni02@gmail.com><filippochinni02@gmail.com>",
 		other: "!!<LinkedIn><https://www.linkedin.com/in/filippo-chinni-carella>",
@@ -15,7 +15,7 @@ export const DATA = {
 		{
 			sectionTitle: "Presentation",
 			type: "text-only",
-			content: "Graduate Student in Computer Science. Software & AI Engineer and Data Scientist.\n\
+			content: "Graduate Student in Computer Science. Software Engineer and AI Engineer.\n\
 			Specialized in Software Design and Documentation. Educated and experienced in AI and Data Engineering."
 		},
 		{
@@ -47,8 +47,8 @@ export const DATA = {
 					title: "::B.sc Degree::: Computer Science and Technologies for Software Production",
 					subtitle: "Università degli Studi di Bari, Bari",
 					description: "",
-					grade: "Grade 110/110 Cum Laude and Special Mention",
-					extra: "::Bachelor's Thesis::: \"__Hyperparameter Optimization: Techniques, Particle Swarm Optimization, with Application in Drone Vision__\"",
+					grade: "Grade: 110/110 Cum Laude and Special Mention",
+					extra: "",
 					media: ["./images/media/bachelor_degree_certificate.jpeg"],
 					icon: "./images/icons/uniba.png"
 				},
@@ -57,7 +57,7 @@ export const DATA = {
 					title: "High School Diploma: Diploma in Scientific Studies",
 					subtitle: "Liceo Scientifico A. Scacchi, Bari",
 					description: "",
-					grade: "",
+					grade: "Grade: 96/100",
 					extra: "",
 					media: [],
 					icon: "./images/icons/liceo_scacchi.png"
@@ -95,8 +95,10 @@ export const DATA = {
 				{
 					title: "Personal GitHub Profile: !!<filippochinni><https://github.com/filippochinni?tab=repositories>",
 					subtitle: "Prominent projects I developed:",
-					description: "!!<InventoryApp><https://github.com/filippochinni/inventory-app>: Android App for Stocktaking - Full Development Lifecycle\n\
-					!!<RankerApp><https://github.com/filippochinni/ranker-app>: Utility tool for a personal project about making Rankings of various media\n",
+					description: [
+						"!!<InventoryApp><https://github.com/filippochinni/inventory-app>: Android App for stocktaking - Project with full development lifecycle",
+						"!!<RankerApp><https://github.com/filippochinni/ranker-app>: Utility tool for a personal project about making Rankings of various media",
+					],
 					extra: "",
 					media: [],
 					icon: "./images/icons/github.png"
@@ -104,9 +106,10 @@ export const DATA = {
 				{
 					title: "University-related GitHub Profile: !!<FilippoChinniUNIVERSITY><https://github.com/FilippoChinniUNIVERSITY>",
 					subtitle: "Prominent projects I developed:",
-					description: "!!<PronuntiApp><https://github.com/FilippoChinniUNIVERSITY/PronuntiApp>: Android App for Speech Therapy - Mobile Software Development Project\n\
-					!!<Pacman (on LandTiger SoC)><https://github.com/FilippoChinniUNIVERSITY/PacMan-LandTiger>: Pacman developed on System on Chip (SoC) - LandTiger LPC1768\n\
-					::Bachelor's Thesis::: !!<Paper><https://drive.google.com/file/d/1Ew50b8u7d7MQaOyo6f-5lWjxfeeLSAeu/view?usp=sharing> | !!<LateX Repo><https://github.com/FilippoChinniUNIVERSITY/Bachelor-Thesis-Paper> | !!<Code Repo><https://github.com/FilippoChinniUNIVERSITY/Bachelor-Thesis>",
+					description: [
+						"!!<PronuntiApp><https://github.com/FilippoChinniUNIVERSITY/PronuntiApp>: Android App for Speech Therapy - Mobile Software Development Project",
+						"!!<Pacman (on LandTiger SoC)><https://github.com/FilippoChinniUNIVERSITY/PacMan-LandTiger>: Pacman developed on System on Chip (SoC) - LandTiger LPC1768",
+					],
 					extra: "",
 					media: [],
 					icon: "./images/icons/github.png"
@@ -127,7 +130,8 @@ export const DATA = {
 						"**Database:** designed both Relational (SQL) and NoSQL Databases. Trained on complex queries",
 						"**Project Management:** can make estimations and plans; experienced with Agile methodologies (SCRUM) and ALM tools (GitHub, GitLab, Redmine, Jira)",
 						"**Version Control:** experienced with versioning tools (Git, SVN) and best practices (GitFlow)",
-						"**DevOps**: have knowledge of CI/CD pipelines and QA tools (SonarCloud, Fortify, ...). Worked with REST APIs. Deployed an HomeLab server for personal use (using Linux, Docker, Nginx, ...)",
+						"**DevOps:** experienced in CI/CD pipelines and QA tools (SonarCloud, Fortify). Worked with REST APIs",
+						"**Cloud:** deployed a 2-nodes HomeLab server cluster using Linux, OpenMediaVault, Docker, Nginx (NPM), Nextcloud and more. Implemented sync and backup strategies and warm-standby failover"
 					]
 				},
 				{
@@ -135,7 +139,7 @@ export const DATA = {
 					list: [
 						"**Machine Learning:** attended multiple courses on the topic, and based my Bachelor's Thesis on a Machine/Deep Learning theme, Hyperparameter Optimization",
 						"**Data Engineering:** attended a specialized extra course on Intelligent Data Analysis. Learned Data Preprocessing and Feature Engineering",
-						"**Big Data Processing:** experience with tools such as Hadoop, Spark, and MapReduce",
+						"**Big Data Processing:** experience with tools such as Hadoop, Spark (PySpark), and MapReduce",
 						"**AI Engineering:** experience with model training and evaluation, and have knowledge of MLOps, LLMs, RAG Architectures and Computer Vision. Used Azure ML for cloud computing",
 					]
 				},
@@ -184,15 +188,6 @@ export const DATA = {
 							],
 						},
 						{
-							h2: "Programming Techniques and Technologies",
-							list: [
-								"Unit Testing",
-								"REST API & Swagger",
-								"Relational DBMS",
-								"NoSQL Databases",
-							]
-						},
-						{
 							h2: "Data Science and Machine Learning Skills",
 							list: [
 								"Intelligent Data Analysis",
@@ -211,6 +206,15 @@ export const DATA = {
 								"Web Programming",
 								"Embedded Programming",
 							],
+						},
+						{
+							h2: "Other Programming Techniques and Technologies",
+							list: [
+								"Unit Testing",
+								"REST API & Swagger",
+								"Relational DBMS",
+								"NoSQL Databases",
+							]
 						},
 					]
 				},
@@ -302,6 +306,17 @@ export const DATA = {
 								"GitLab",
 								"Subversion (SVN)",
 								"Redmine",
+							]
+						},
+						{
+							h2: "Cloud Services and Tools",
+							list: [
+								"Docker",
+								"Docker Compose",
+								"OpenMediaVault",
+								"Nginx (NPM)",
+								"Kubernetes",
+								"Nextcloud",
 							]
 						},
 						{
@@ -423,7 +438,7 @@ export const DATA = {
 					entryKey: "16/05/2015",
 					title: "International Competition for Mathematical and Logical Games - 22nd Edition - Italian Finals",
 					subtitle: "Bocconi University - Milan, Italy",
-					description: "The \"Championnat International des Jeux Mathématiques et Logiques\" is an international mathematics competition.\nAfter achieving 2nd place in the regional competition, I participated in the national final held at \"Centro PRISTEM\" in Bocconi University.",
+					description: "The \"Championnat International des Jeux Mathématiques et Logiques\" is an international mathematics competition.\nAfter achieving 2nd place in the regional competition, I participated in the national finals held at \"Centro PRISTEM\" in Bocconi University.",
 					grade: "",
 					extra: "",
 					media: ["./images/media/mathematical_games_certificate.jpg"],
@@ -491,7 +506,7 @@ export const DATA = {
 					subtitle: "Cambridge English",
 					description: "",
 					grade: "Score 213 (Grade B) (Equivalent to **IELTS 9**)",
-					extra: "!!<Credential Link><https://www.cambridgeenglish.org/exams-and-tests/qualifications/proficiency/>",
+					extra: "!!<Credential Link><https://www.cambridgeenglish.org/educators-organisations/accept-verify-exams/higher-education-institutions/verify-results-online/>",
 					media: ["./images/media/c2_certificate.png", "./images/media/c2_statement_result.png"],
 					icon: "./images/icons/cambridge.jpg"
 				},
@@ -505,6 +520,62 @@ export const DATA = {
 					media: ["./images/media/badge_c4ida.png"],
 					icon: "./images/icons/uniba.png"
 				}
+			]
+		},
+		{
+			sectionTitle: "Publications",
+			type: "generic-table",
+			content: [
+				{
+					entryKey: "",
+					title: "Mobile Apps",
+					subtitle: "Google Play Store profile: !!<filippochinni><https://about:blank> (WIP)",
+					description: [
+						"**InventoryApp:** Android App for stocktaking, personal and enterprise use\n!!<Repo><https://github.com/filippochinni/inventory-app> | !!<Google Play Store><https://about:blank>",
+					],
+					grade: "",
+					extra: "",
+					media: [],
+					icon: "./images/icons/google_play.png"
+				},
+				{
+					entryKey: "",
+					title: "JetBrains IDEs Extensions",
+					subtitle: "JetBrains Marketplace profile: !!<filippochinni><https://plugins.jetbrains.com/vendor/filippochinni>",
+					description: [
+						"**Settings IDEs - ColorTheme:** Editor Color Scheme for JetBrains IDEs\n!!<Repo><https://github.com/filippochinni/settings-ides--color-theme> | !!<JetBrains Marketplace><https://plugins.jetbrains.com/plugin/34753-settings-ides--colortheme>",
+						"**Settings IDEs - Keymap:** Keymap for JetBrains IDEs\n!!<Repo><https://github.com/filippochinni/settings-ides--keymap> | !!<JetBrains Marketplace><https://plugins.jetbrains.com/plugin/34754-settings-ides--keymap>"
+					],
+					grade: "",
+					extra: "",
+					media: [],
+					icon: "./images/icons/jetbrains.png"
+				},
+				{
+					entryKey: "",
+					title: "Visual Studio Code Extensions",
+					subtitle: "Visual Studio Marketplace Publishers profile: !!<filippochinni><https://marketplace.visualstudio.com/publishers/filippochinni>",
+					description: [
+						"**Settings IDEs - ColorTheme:** Editor Color Scheme for Visual Studio Code\n!!<Repo><https://github.com/filippochinni/settings-ides--color-theme> | !!<VS Marketplace><https://marketplace.visualstudio.com/items?itemName=filippochinni.settings-ides--color-theme>",
+						"**Settings IDEs - Keymap:** Keymap for Visual Studio Code\n!!<Repo><https://github.com/filippochinni/settings-ides--keymap> | !!<VS Marketplace><https://marketplace.visualstudio.com/items?itemName=filippochinni.settings-ides--keymap>",
+					],
+					grade: "",
+					extra: "",
+					media: [],
+					icon: "./images/icons/vs_code.png"
+				},
+				{
+					entryKey: "",
+					title: "Academic Papers",
+					subtitle: "Google Scholar profile: !!<Filippo Chinni Carella><https://about:blank>",
+					description: [
+						"**Sep 2024:**  __\"Hyperparameter Optimization: Techniques, Particle Swarm Optimization, with Application in Drone Vision__\"\n!!<Paper><https://drive.google.com/file/d/1Ew50b8u7d7MQaOyo6f-5lWjxfeeLSAeu/view?usp=sharing> | !!<LateX Repo><https://github.com/FilippoChinniUNIVERSITY/Bachelor-Thesis-Paper> | !!<Code Repo><https://github.com/FilippoChinniUNIVERSITY/Bachelor-Thesis>",
+					],
+					grade: "",
+					extra: "",
+					media: [],
+					icon: "./images/icons/google_scholar.png"
+				},
 			]
 		}
 	],

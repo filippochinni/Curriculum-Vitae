@@ -8,7 +8,7 @@ body {
 #CVversion {
 	position: absolute;
 	top: 30px;
-	left: 50px;
+	left: 100px;
 }
 
 #pageListDiv {
@@ -379,6 +379,20 @@ li::marker {
 
 .entryDescriptionDiv {
 	font-size: inherit;
+}
+
+.entryDescriptionListEntry {
+	font-size: inherit;
+}
+
+.entryDescriptionList {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	flex-wrap: wrap;
+
+	width: 100%;;
 }
 
 .entryGradeDiv {

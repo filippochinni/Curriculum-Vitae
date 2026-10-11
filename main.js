@@ -8,6 +8,7 @@ const SECTION_ORDER = [
 	"Work Experience",
 	"Education",
 	"Portfolio",
+	"Publications",
 	"Skills",
 	"Hard Skills List",
 	"Awards",
@@ -233,6 +234,8 @@ function buildSectionText(sectionContentDiv, sectionContent) {
 }
 
 function buildSectionTable(sectionContentDiv, sectionContent) {
+	const allEntryKeysEmpty = sectionContent.every(entry => !entry?.entryKey?.trim());
+
 	for (const entry of sectionContent) {
 		const tableEntryDiv = createElement('div', 'tableEntryDiv');
 		const tableKeyDiv = createElement('div', 'tableKeyDiv');
@@ -242,7 +245,9 @@ function buildSectionTable(sectionContentDiv, sectionContent) {
 		sectionContentDiv.appendChild(tableEntryDiv);
 
 		tableEntryDiv.appendChild(tableIconDiv);
-		tableEntryDiv.appendChild(tableKeyDiv);
+		if (!allEntryKeysEmpty) {
+			tableEntryDiv.appendChild(tableKeyDiv);
+		}
 		tableEntryDiv.appendChild(entryDiv);
 
 		tableKeyDiv.innerHTML = parseText(entry?.entryKey);
@@ -354,7 +359,17 @@ function buildEntryDiv(entryDiv, entryContent) {
 
 	entryTitleDiv.innerHTML = parseText(entryContent?.title);
 	entrySubtitleDiv.innerHTML = parseText(entryContent?.subtitle);
-	entryDescriptionDiv.innerHTML = parseText(entryContent?.description);
+	if (Array.isArray(entryContent?.description)) {
+		const descriptionList = createElement('ul', 'entryDescriptionList');
+		for (const descElem of entryContent.description) {
+			const descriptionListEntry = createElement('li', 'entryDescriptionListEntry');
+			descriptionListEntry.innerHTML = parseText(descElem);
+			descriptionList.appendChild(descriptionListEntry);
+		}
+		entryDescriptionDiv.appendChild(descriptionList);
+	} else {
+		entryDescriptionDiv.innerHTML = parseText(entryContent.description);
+	}
 	entryGradeDiv.innerHTML = parseText(entryContent?.grade);
 	entryExtraDiv.innerHTML = parseText(entryContent?.extra);
 	entryMediaDiv.innerHTML = parseMedia(entryContent?.media);
