@@ -1,5 +1,5 @@
 export const DATA = {
-	version: "v1.6.2",
+	version: "v1.6.3",
 	header: {
 		picture: "./images/picture.png",
 		fullName: "Filippo Chinni Carella",
@@ -8,7 +8,7 @@ export const DATA = {
 		location: "Milan, Italy",
 		locations: ["Bari, Italy", "Turin, Italy", "Milan, Italy", "Bologna, Italy", "Rome, Italy"],
 		locationInfo: "**(Willing to relocate)**",
-		email: "!!<filippochinni02@gmail.com><filippochinni02@gmail.com>",
+		email: "!!<filippochinni02@gmail.com><mailto:filippochinni02@gmail.com>",
 		other: "!!<LinkedIn><https://www.linkedin.com/in/filippo-chinni-carella>",
 	},
 	sections: [
@@ -156,8 +156,8 @@ export const DATA = {
 					h1: "Soft Skills",
 					list: [
 						"**Proactive Learning:** eager self-learner and excited to try new skills and processes",
-						"**Leadership:** led every group project in university as Team Leader, always achieving the best grades, and also winning an award for one of our projects",
 						"**Teamwork:** education was filled with group projects, where I learned the most about collaboration",
+						"**Leadership:** led every group project in university as Team Leader, always achieving the best grades, and also winning an award for one of our projects",
 						"**Coaching:** able to lead colleagues and teammates to a standardized workflow",
 						"**Precision:** have particular care for quality, tidiness, and completeness in my work",
 						"**Critical Thinking:** analyze problems and ask whys behind decisions to draw thoughtful conclusions",
